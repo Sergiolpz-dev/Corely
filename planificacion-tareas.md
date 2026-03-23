@@ -57,6 +57,8 @@
 | 05/03/2026 | Jorge  | Implementación de la lógica de HabitsPage                     |
 | 05/03/2026 | Jorge  | Implementación de colores y racha en HabitsPage               |
 | 05/03/2026 | Jorge  | Implementación de la lógica de horas en TaskPage              |
+| 23/03/2026 | Jorge  | Implementación de pruebas unitarias del backend con pytest    |
+| 23/03/2026 | Jorge  | Documentación de pruebas para la memoria del TFG              |
 
 ---
 
