@@ -29,6 +29,14 @@ class User(Base):
     # Relacion con hábitos
     habits = relationship("Habit", back_populates="user", cascade="all, delete-orphan")
 
+    # Relacion con eventos
+    events = relationship("Event", back_populates="user", cascade="all, delete-orphan")
+
+    # Token de Google Calendar
+    google_calendar_token = relationship(
+        "GoogleCalendarToken", back_populates="user", uselist=False, cascade="all, delete-orphan"
+    )
+
     def __repr__(self):
         return f"<User(id={self.id}, email={self.email}, username={self.username})>"
 
