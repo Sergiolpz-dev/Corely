@@ -10,6 +10,8 @@ from models.task import Task          # noqa: F401 - registra la tabla
 from models.habits import Habit       # noqa: F401 - registra la tabla
 from models.user_stats import UserHabitStats  # noqa: F401 - registra la tabla
 from models.social_account import SocialAccount  # noqa: F401 - registra la tabla
+from models.event import Event  # noqa: F401 - registra la tabla
+from models.google_calendar_token import GoogleCalendarToken  # noqa: F401 - registra la tabla
 from auth.utils import hash_password, create_access_token
 from auth.dependencies import get_db
 
