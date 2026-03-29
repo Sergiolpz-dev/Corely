@@ -22,6 +22,7 @@ from auth.oauth import router as oauth_router
 from tasks.router import router as tasks_router
 from habits.router import router as habits_router
 from events.router import router as events_router
+from news.router import router as news_router
 
 # 1. URL de conexión para MariaDB/MySQL
 DATABASE_URL = settings.DATABASE_URL
@@ -68,6 +69,7 @@ app.include_router(oauth_router)
 app.include_router(tasks_router)
 app.include_router(habits_router)
 app.include_router(events_router)
+app.include_router(news_router)
 
 
 def get_db():
