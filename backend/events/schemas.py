@@ -20,6 +20,7 @@ class EventUpdate(BaseModel):
     end_datetime: Optional[datetime] = None
     event_type: Optional[str] = None
     location: Optional[str] = None
+    sync_action: Optional[str] = None  # "add_to_google" | "remove_from_google"
 
 
 class EventResponse(BaseModel):
