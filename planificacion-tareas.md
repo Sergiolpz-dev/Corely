@@ -62,6 +62,7 @@
 | 23/03/2026 | Sergio | Implementación de pruebas de componentes del frontend con Vitest y Testing Library |
 | 23/03/2026 | Sergio | Documentación de pruebas del frontend para la memoria del TFG                     |
 | 25/03/2026 | Sergio | Implementación de la lógica de la página de Calendar (CalendarPage) |
+| 02/04/2026 | Sergio | Implementación de la pruebas de la página de Calendar (CalendarPage) |
 
 ---
 

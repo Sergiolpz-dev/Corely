@@ -86,6 +86,20 @@ Tras aplicar la corrección, todas las pruebas pasan satisfactoriamente.
 | `test_toggle_grace_period`         | Saltar un día no rompe la racha (período de gracia) | ✅ PASSED |
 | `test_toggle_broken_streak`        | Superar el período de gracia reinicia el streak a 1 | ✅ PASSED |
 
+### Tercera ejecución — suite completa del backend
+
+| Campo         | Valor                           |
+| ------------- | ------------------------------- |
+| **Fecha**     | 2 de abril de 2026              |
+| **Resultado** | ✅ Éxito — 45 pasadas, 0 fallos |
+| **Duración**  | 10,39 segundos                  |
+
+Tras implementar el módulo de eventos y Google Calendar, se ejecutó la suite completa del backend, que ahora incluye también las pruebas del módulo de eventos. Todas las pruebas pasan satisfactoriamente.
+
+![Todas las pruebas del backend pasando](imagenes/pruebas_backend_ok_2026-04-02.png)
+
+---
+
 ### Advertencias del sistema (_warnings_)
 
 Durante la ejecución de las pruebas aparecen una serie de _warnings_ que no provocan ningún fallo pero que conviene mencionar. Son avisos de deprecación generados por las propias dependencias del proyecto:
@@ -167,6 +181,42 @@ Tras aplicar la corrección, todas las pruebas pasan satisfactoriamente.
 | `renderiza el encabezado "Hábitos"` | El título de la página de hábitos es visible al montar | ✅ PASSED |
 | `muestra el botón de nuevo hábito`  | El botón "Nuevo Hábito" está presente en la interfaz   | ✅ PASSED |
 
+### Tercera ejecución — fallo detectado
+
+| Campo         | Valor                              |
+| ------------- | ---------------------------------- |
+| **Fecha**     | 2 de abril de 2026                 |
+| **Resultado** | ❌ 1 fallo — 9 pasadas, 2 fallidas |
+| **Duración**  | ~3,12 segundos                     |
+
+Se añadieron tests para el módulo de calendario (`CalendarPage.test.tsx`). Durante la primera ejecución ambos tests fallaron debido a un import incorrecto: se usó `import CalendarPage from ...` (export por defecto) cuando el componente usa un named export (`export const CalendarPage`).
+
+```
+Error: Element type is invalid: expected a string (for built-in components) or a class/function
+(for composite components) but got: undefined. You likely forgot to export your component
+from the file it's defined in, or you might have mixed up default and named imports.
+```
+
+![Primera ejecución del frontend con fallo en calendario](imagenes/pruebas_frontend_fallo_2026-04-02.png)
+
+**Corrección aplicada:** se actualizó el import a `import { CalendarPage } from ...` para usar el named export correcto.
+
+---
+
+### Cuarta ejecución — resultado final
+
+| Campo         | Valor                           |
+| ------------- | ------------------------------- |
+| **Fecha**     | 2 de abril de 2026              |
+| **Resultado** | ✅ Éxito — 11 pasadas, 0 fallos |
+| **Duración**  | ~3,12 segundos                  |
+
+Tras corregir el import, todos los tests del frontend pasan satisfactoriamente, incluyendo los dos nuevos del módulo de calendario.
+
+![Todos los tests del frontend pasando](imagenes/pruebas_frontend_ok_2026-04-02.png)
+
+---
+
 ### Notas sobre la configuración de pruebas
 
 Las pruebas requirieron un mock del módulo `@react-oauth/google` porque `useGoogleLogin` intenta acceder a la API de Google en tiempo de inicialización, lo cual no está disponible en el entorno jsdom. Asimismo, `fetch` se neutralizó globalmente en el fichero `setupTests.ts` para evitar llamadas reales a la API durante los tests. Ambas técnicas son estándar en el ecosistema de Testing Library y no afectan al funcionamiento de la aplicación en producción.
@@ -177,6 +227,6 @@ Las pruebas requirieron un mock del módulo `@react-oauth/google` porque `useGoo
 
 | Módulo    | Pruebas | Pasadas | Fallidas |
 | --------- | ------- | ------- | -------- |
-| Backend   | 26      | 26      | 0        |
-| Frontend  | 9       | 9       | 0        |
-| **Total** | **35**  | **35**  | **0**    |
+| Backend   | 45      | 45      | 0        |
+| Frontend  | 11      | 11      | 0        |
+| **Total** | **56**  | **56**  | **0**    |

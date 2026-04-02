@@ -55,16 +55,9 @@ const EVENT_TYPE_LABELS: Record<string, string> = {
     other: "Otro",
 };
 
-const EVENT_TYPE_COLORS: Record<string, string> = {
-    meeting: "bg-blue-500/10 text-blue-500 border-blue-500/20",
-    presentation: "bg-purple-500/10 text-purple-500 border-purple-500/20",
-    planning: "bg-green-500/10 text-green-500 border-green-500/20",
-    other: "bg-muted text-muted-foreground border-border",
-};
 
 const BASE_TYPES = Object.keys(EVENT_TYPE_LABELS);
 const getTypeLabel = (type: string) => EVENT_TYPE_LABELS[type] ?? type;
-const getTypeColor = (type: string) => EVENT_TYPE_COLORS[type] ?? EVENT_TYPE_COLORS.other;
 
 const PRIORITY_COLORS: Record<string, string> = {
     high: "text-red-500",
@@ -130,6 +123,31 @@ const parseTaskDate = (dateStr: string): Date => {
     return d;
 };
 
+// Devuelve las clases de color según el tipo de evento:
+// • is_google_event  → solo en Google Calendar (verde)
+// • google_event_id  → en nuestra app Y en Google Calendar (violeta — híbrido)
+// • sin google_event_id → solo en nuestra app (azul)
+const getEventColor = (e: CalendarEvent) => {
+    if (e.is_google_event) return {
+        pill: "bg-green-500/15 text-green-600",
+        card: "bg-green-500/5 border-green-500/20",
+        badge: "bg-green-500/10 text-green-600 border-green-500/20",
+        dot: "bg-green-500",
+    };
+    if (e.google_event_id) return {
+        pill: "bg-violet-500/15 text-violet-600",
+        card: "bg-violet-500/5 border-violet-500/20",
+        badge: "bg-violet-500/10 text-violet-600 border-violet-500/20",
+        dot: "bg-violet-500",
+    };
+    return {
+        pill: "bg-blue-500/15 text-blue-600",
+        card: "bg-blue-500/5 border-blue-500/20",
+        badge: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+        dot: "bg-blue-500",
+    };
+};
+
 // ── Component ──────────────────────────────────────────────────────────────────
 
 export const CalendarPage = () => {
@@ -162,7 +180,8 @@ export const CalendarPage = () => {
     const [formEnd, setFormEnd] = useState("");
     const [formType, setFormType] = useState("other");
     const [formLocation, setFormLocation] = useState("");
-    const [formCreateInGoogle, setFormCreateInGoogle] = useState(false);
+    // "add" = añadir a Google, "remove" = quitar de Google, null = sin cambio
+    const [formGoogleAction, setFormGoogleAction] = useState<"add" | "remove" | null>(null);
     const [formError, setFormError] = useState<string | null>(null);
     const [isSaving, setIsSaving] = useState(false);
     const [formCustomType, setFormCustomType] = useState("");
@@ -274,7 +293,7 @@ export const CalendarPage = () => {
         setFormEnd(toDatetimeLocal(end));
         setFormType("other");
         setFormLocation("");
-        setFormCreateInGoogle(false);
+        setFormGoogleAction(null);
         setFormError(null);
         setShowEventModal(true);
     };
@@ -291,7 +310,7 @@ export const CalendarPage = () => {
         setFormEnd(toDatetimeLocal(end));
         setFormType(event.event_type);
         setFormLocation(event.location || "");
-        setFormCreateInGoogle(false);
+        setFormGoogleAction(null);
         setFormError(null);
         setShowEventModal(true);
     };
@@ -313,7 +332,9 @@ export const CalendarPage = () => {
             end_datetime: formEnd ? new Date(formEnd).toISOString() : undefined,
             event_type: actualType,
             location: formLocation.trim() || undefined,
-            ...(editingEvent ? {} : { create_in_google: formCreateInGoogle }),
+            ...(editingEvent
+                ? { sync_action: formGoogleAction ?? undefined }
+                : { create_in_google: formGoogleAction === "add" }),
         };
 
         try {
@@ -532,21 +553,15 @@ export const CalendarPage = () => {
                             {calendarDays.map(({ date, isCurrentMonth }, idx) => {
                                 const dayEvents = getEventsForDay(date);
                                 const dayTasks = getTasksForDay(date);
-                                const ourEvents = dayEvents.filter(e => !e.is_google_event);
-                                const googleEvents = dayEvents.filter(e => e.is_google_event);
                                 const total = dayEvents.length + dayTasks.length;
                                 const isToday = isSameDay(date, today);
                                 const isSelected = selectedDay ? isSameDay(date, selectedDay) : false;
 
                                 // Cuántos pills mostrar (max 2)
                                 const pills: { label: string; cls: string }[] = [];
-                                for (const e of ourEvents) {
+                                for (const e of dayEvents) {
                                     if (pills.length >= 2) break;
-                                    pills.push({ label: e.title, cls: "bg-blue-500/15 text-blue-600" });
-                                }
-                                for (const e of googleEvents) {
-                                    if (pills.length >= 2) break;
-                                    pills.push({ label: e.title, cls: "bg-green-500/15 text-green-600" });
+                                    pills.push({ label: e.title, cls: getEventColor(e).pill });
                                 }
                                 for (const t of dayTasks) {
                                     if (pills.length >= 2) break;
@@ -596,6 +611,10 @@ export const CalendarPage = () => {
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded bg-blue-500/20" />
                                 <span>Mis eventos</span>
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <div className="w-3 h-3 rounded bg-violet-500/20" />
+                                <span>En ambos sitios</span>
                             </div>
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded bg-green-500/20" />
@@ -670,18 +689,10 @@ export const CalendarPage = () => {
                                         <button
                                             key={e.id}
                                             onClick={() => handleDayClick(new Date(e.start_datetime))}
-                                            className={`w-full text-left p-2.5 rounded-lg border transition-colors hover:bg-muted/60 ${
-                                                e.is_google_event
-                                                    ? "bg-green-500/5 border-green-500/20"
-                                                    : "bg-blue-500/5 border-blue-500/20"
-                                            }`}
+                                            className={`w-full text-left p-2.5 rounded-lg border transition-colors hover:bg-muted/60 ${getEventColor(e).card}`}
                                         >
-                                            <span className={`inline-block text-xs px-1.5 py-0.5 rounded-full border mb-1 ${
-                                                e.is_google_event
-                                                    ? "bg-green-500/10 text-green-600 border-green-500/20"
-                                                    : getTypeColor(e.event_type)
-                                            }`}>
-                                                {e.is_google_event ? "Google" : getTypeLabel(e.event_type)}
+                                            <span className={`inline-block text-xs px-1.5 py-0.5 rounded-full border mb-1 ${getEventColor(e).badge}`}>
+                                                {e.is_google_event ? "Google" : e.google_event_id ? `${getTypeLabel(e.event_type)} · Google` : getTypeLabel(e.event_type)}
                                             </span>
                                             <p className="text-xs font-medium truncate">{e.title}</p>
                                             <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
@@ -752,17 +763,13 @@ export const CalendarPage = () => {
                                         {getEventsForDay(selectedDay).map(e => (
                                             <div
                                                 key={e.id}
-                                                className={`p-3 rounded-lg border ${e.is_google_event
-                                                    ? "bg-green-500/5 border-green-500/20"
-                                                    : "bg-blue-500/5 border-blue-500/20"}`}
+                                                className={`p-3 rounded-lg border ${getEventColor(e).card}`}
                                             >
                                                 <div className="flex items-start justify-between gap-2">
                                                     <div className="flex-1 min-w-0">
                                                         <div className="flex items-center gap-2 mb-1">
-                                                            <span className={`text-xs px-2 py-0.5 rounded-full border ${e.is_google_event
-                                                                ? "bg-green-500/10 text-green-600 border-green-500/20"
-                                                                : getTypeColor(e.event_type)}`}>
-                                                                {e.is_google_event ? "Google Calendar" : getTypeLabel(e.event_type)}
+                                                            <span className={`text-xs px-2 py-0.5 rounded-full border ${getEventColor(e).badge}`}>
+                                                                {e.is_google_event ? "Google Calendar" : e.google_event_id ? `${getTypeLabel(e.event_type)} · Google` : getTypeLabel(e.event_type)}
                                                             </span>
                                                         </div>
                                                         <p className="text-sm font-medium truncate">{e.title}</p>
@@ -972,7 +979,7 @@ export const CalendarPage = () => {
                                 </div>
                             </div>
 
-                            {/* Google Calendar checkbox — solo al crear y si está conectado */}
+                            {/* Google Calendar toggle */}
                             {isGoogleConnected && !editingEvent && (
                                 <label
                                     htmlFor="ev-google"
@@ -981,11 +988,44 @@ export const CalendarPage = () => {
                                     <input
                                         type="checkbox"
                                         id="ev-google"
-                                        checked={formCreateInGoogle}
-                                        onChange={e => setFormCreateInGoogle(e.target.checked)}
+                                        checked={formGoogleAction === "add"}
+                                        onChange={e => setFormGoogleAction(e.target.checked ? "add" : null)}
                                         className="h-4 w-4 rounded border-input accent-blue-600"
                                     />
                                     <span className="text-sm">Crear también en Google Calendar</span>
+                                </label>
+                            )}
+                            {isGoogleConnected && editingEvent && !editingEvent.google_event_id && (
+                                <label
+                                    htmlFor="ev-google-add"
+                                    className="flex items-center gap-3 p-3 rounded-lg bg-muted cursor-pointer select-none"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        id="ev-google-add"
+                                        checked={formGoogleAction === "add"}
+                                        onChange={e => setFormGoogleAction(e.target.checked ? "add" : null)}
+                                        className="h-4 w-4 rounded border-input accent-blue-600"
+                                    />
+                                    <span className="text-sm">Añadir a Google Calendar</span>
+                                </label>
+                            )}
+                            {editingEvent?.google_event_id && (
+                                <label
+                                    htmlFor="ev-google-remove"
+                                    className="flex items-center gap-3 p-3 rounded-lg bg-violet-500/10 border border-violet-500/20 cursor-pointer select-none"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        id="ev-google-remove"
+                                        checked={formGoogleAction === "remove"}
+                                        onChange={e => setFormGoogleAction(e.target.checked ? "remove" : null)}
+                                        className="h-4 w-4 rounded border-input accent-red-500"
+                                    />
+                                    <div>
+                                        <span className="text-sm">Eliminar de Google Calendar</span>
+                                        <p className="text-xs text-muted-foreground mt-0.5">Este evento también está sincronizado con Google Calendar</p>
+                                    </div>
                                 </label>
                             )}
 

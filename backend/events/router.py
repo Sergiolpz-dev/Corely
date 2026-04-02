@@ -83,7 +83,8 @@ async def update_event(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """Edita un evento (solo si pertenece al usuario autenticado)."""
+    """Edita un evento. Si tiene google_event_id, lo actualiza también en Google Calendar.
+    sync_action='add_to_google' lo enlaza; sync_action='remove_from_google' lo desvincula."""
     event = db.query(Event).filter(
         Event.id == event_id,
         Event.id_user == current_user.id,
@@ -92,11 +93,49 @@ async def update_event(
     if not event:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Evento no encontrado")
 
-    for field, value in event_data.model_dump(exclude_unset=True).items():
+    sync_action = event_data.sync_action
+
+    # Aplicar cambios de datos (excluir sync_action, que no es columna de BD)
+    update_fields = event_data.model_dump(exclude_unset=True, exclude={"sync_action"})
+    for field, value in update_fields.items():
         setattr(event, field, value)
 
     db.commit()
     db.refresh(event)
+
+    # Gestión de Google Calendar (errores son silenciosos para no bloquear)
+    token_record = db.query(GoogleCalendarToken).filter(
+        GoogleCalendarToken.id_user == current_user.id
+    ).first()
+
+    if token_record:
+        if sync_action == "add_to_google" and not event.google_event_id:
+            # Crear en Google Calendar y guardar el ID
+            from events.schemas import EventCreate as _EC
+            payload = _EC(
+                title=event.title,
+                description=event.description,
+                start_datetime=event.start_datetime,
+                end_datetime=event.end_datetime,
+                location=event.location,
+            )
+            google_id = await _create_google_event(payload, token_record, db)
+            if google_id:
+                event.google_event_id = google_id
+                db.commit()
+                db.refresh(event)
+
+        elif sync_action == "remove_from_google" and event.google_event_id:
+            # Eliminar de Google Calendar y limpiar el ID
+            await _delete_google_event(event.google_event_id, token_record, db)
+            event.google_event_id = None
+            db.commit()
+            db.refresh(event)
+
+        elif event.google_event_id:
+            # El evento ya estaba en Google → actualizarlo
+            await _update_google_event(event, token_record, db)
+
     return event
 
 
@@ -106,7 +145,7 @@ async def delete_event(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """Elimina un evento (solo si pertenece al usuario autenticado)."""
+    """Elimina un evento. Si tiene google_event_id, lo elimina también de Google Calendar."""
     event = db.query(Event).filter(
         Event.id == event_id,
         Event.id_user == current_user.id,
@@ -114,6 +153,14 @@ async def delete_event(
 
     if not event:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Evento no encontrado")
+
+    # Intentar eliminar de Google Calendar (silencioso si falla)
+    if event.google_event_id:
+        token_record = db.query(GoogleCalendarToken).filter(
+            GoogleCalendarToken.id_user == current_user.id
+        ).first()
+        if token_record:
+            await _delete_google_event(event.google_event_id, token_record, db)
 
     db.delete(event)
     db.commit()
@@ -368,6 +415,52 @@ async def _get_valid_access_token(token_record: GoogleCalendarToken, db: Session
     db.commit()
 
     return token_record.access_token
+
+
+async def _update_google_event(
+    event: Event,
+    token_record: GoogleCalendarToken,
+    db: Session,
+) -> None:
+    """Actualiza el evento en Google Calendar. Silencioso si falla."""
+    try:
+        access_token = await _get_valid_access_token(token_record, db)
+        end_dt = event.end_datetime or event.start_datetime
+        body = {
+            "summary": event.title,
+            "description": event.description,
+            "location": event.location,
+            "start": {"dateTime": event.start_datetime.isoformat(), "timeZone": "UTC"},
+            "end": {"dateTime": end_dt.isoformat(), "timeZone": "UTC"},
+        }
+        async with httpx.AsyncClient() as client:
+            await client.patch(
+                f"{GOOGLE_CALENDAR_API}/calendars/primary/events/{event.google_event_id}",
+                headers={
+                    "Authorization": f"Bearer {access_token}",
+                    "Content-Type": "application/json",
+                },
+                json=body,
+            )
+    except Exception:
+        pass
+
+
+async def _delete_google_event(
+    google_event_id: str,
+    token_record: GoogleCalendarToken,
+    db: Session,
+) -> None:
+    """Elimina el evento de Google Calendar. Silencioso si falla."""
+    try:
+        access_token = await _get_valid_access_token(token_record, db)
+        async with httpx.AsyncClient() as client:
+            await client.delete(
+                f"{GOOGLE_CALENDAR_API}/calendars/primary/events/{google_event_id}",
+                headers={"Authorization": f"Bearer {access_token}"},
+            )
+    except Exception:
+        pass
 
 
 async def _create_google_event(
