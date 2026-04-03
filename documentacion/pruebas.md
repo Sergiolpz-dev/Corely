@@ -223,10 +223,38 @@ Las pruebas requirieron un mock del módulo `@react-oauth/google` porque `useGoo
 
 ---
 
+### Quinta ejecución — NewsPage
+
+| Campo         | Valor                           |
+| ------------- | ------------------------------- |
+| **Fecha**     | 3 de abril de 2026              |
+| **Resultado** | ✅ Éxito — 18 pasadas, 0 fallos |
+| **Duración**  | ~3 segundos                     |
+
+Se añadieron los tests del módulo de noticias (`NewsPage.test.tsx`), que cubren el renderizado inicial, la carga de artículos desde la API, el filtrado por categoría y la búsqueda por término. Todos los tests pasan satisfactoriamente.
+
+![Tests de NewsPage pasando](imagenes/pruebas_frontend_newspage_2026-04-03.png)
+
+---
+
+#### Noticias — NewsPage (7 pruebas)
+
+| Prueba                                                        | Descripción                                                          | Estado    |
+| ------------------------------------------------------------- | -------------------------------------------------------------------- | --------- |
+| `muestra el encabezado y todos los botones de categoría`      | Verifica que el título y los 8 botones de categoría están en el DOM  | ✅ PASSED |
+| `muestra los artículos recibidos de la API`                   | Comprueba que los artículos devueltos por fetch se renderizan        | ✅ PASSED |
+| `muestra "Sin resultados" cuando la API devuelve lista vacía` | Verifica el estado vacío cuando totalResults = 0                     | ✅ PASSED |
+| `filtra artículos con título "[Removed]"`                     | Artículos eliminados no aparecen; los válidos sí                     | ✅ PASSED |
+| `pulsar "Negocios" lanza fetch con category=business`         | El filtro de categoría usa el parámetro correcto en la petición      | ✅ PASSED |
+| `buscar un término llama a /news/search con q=<término>`      | La búsqueda llama al endpoint correcto con el parámetro q            | ✅ PASSED |
+| `categoría "Todas" lanza 7 peticiones en paralelo`            | Al seleccionar Todas se hace una petición por cada una de las 7 cats | ✅ PASSED |
+
+---
+
 ## Resumen global
 
 | Módulo    | Pruebas | Pasadas | Fallidas |
 | --------- | ------- | ------- | -------- |
 | Backend   | 45      | 45      | 0        |
-| Frontend  | 11      | 11      | 0        |
-| **Total** | **56**  | **56**  | **0**    |
+| Frontend  | 18      | 18      | 0        |
+| **Total** | **63**  | **63**  | **0**    |
