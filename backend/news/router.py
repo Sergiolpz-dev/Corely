@@ -47,7 +47,7 @@ async def get_top_headlines(
 @router.get("/search")
 async def search_news(
     q: str = Query(..., description="Palabras clave (requerido)"),
-    language: str = Query("es", description="Código de idioma: es, en, fr, de, it, pt"),
+    language: Optional[str] = Query(None, description="Código de idioma: es, en, fr, de, it, pt. Omitir para todos los idiomas."),
     sort_by: str = Query("publishedAt", description="publishedAt | relevancy | popularity"),
     from_date: Optional[str] = Query(None, description="Fecha inicio ISO (YYYY-MM-DD)"),
     to_date: Optional[str] = Query(None, description="Fecha fin ISO (YYYY-MM-DD)"),
@@ -62,11 +62,12 @@ async def search_news(
     params: dict = {
         "apiKey": settings.NEWS_API_KEY,
         "q": q,
-        "language": language,
         "sortBy": sort_by,
         "pageSize": page_size,
         "page": page,
     }
+    if language:
+        params["language"] = language
     if from_date:
         params["from"] = from_date
     if to_date:
