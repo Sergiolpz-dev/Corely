@@ -17,12 +17,15 @@ from models.habits import Habit        # noqa: F401 - necesario para que SQLAlch
 from models.user_stats import UserHabitStats  # noqa: F401 - necesario para que SQLAlchemy registre la tabla
 from models.event import Event  # noqa: F401
 from models.google_calendar_token import GoogleCalendarToken  # noqa: F401
+from models.fitness import UserFitnessProfile, Exercise, Food, WorkoutRoutine, WorkoutLog, MealPlan  # noqa: F401
 from auth.router import router as auth_router
 from auth.oauth import router as oauth_router
 from tasks.router import router as tasks_router
 from habits.router import router as habits_router
 from events.router import router as events_router
 from news.router import router as news_router
+from fitness.router import router as fitness_router
+from fitness.seeds import run_seeds
 
 # 1. URL de conexión para MariaDB/MySQL
 DATABASE_URL = settings.DATABASE_URL
@@ -50,6 +53,11 @@ def wait_for_db():
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     wait_for_db()
+    db = SessionLocal()
+    try:
+        run_seeds(db)
+    finally:
+        db.close()
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -70,6 +78,7 @@ app.include_router(tasks_router)
 app.include_router(habits_router)
 app.include_router(events_router)
 app.include_router(news_router)
+app.include_router(fitness_router)
 
 
 def get_db():

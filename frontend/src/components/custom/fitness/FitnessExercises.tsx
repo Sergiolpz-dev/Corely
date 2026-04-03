@@ -1,31 +1,24 @@
-import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useEffect, useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Dumbbell, Search } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dumbbell, Search, Loader2 } from "lucide-react";
 
-const exercises = [
-  { name: "Press de Banca", sets: 4, reps: 12, weight: "60kg", muscleGroup: "Pecho", difficulty: "Intermedio", type: "Barra" },
-  { name: "Sentadillas", sets: 4, reps: 10, weight: "80kg", muscleGroup: "Piernas", difficulty: "Intermedio", type: "Barra" },
-  { name: "Peso Muerto", sets: 3, reps: 8, weight: "100kg", muscleGroup: "Espalda", difficulty: "Avanzado", type: "Barra" },
-  { name: "Press Militar", sets: 3, reps: 12, weight: "40kg", muscleGroup: "Hombros", difficulty: "Intermedio", type: "Barra" },
-  { name: "Curl de Bíceps", sets: 3, reps: 15, weight: "15kg", muscleGroup: "Brazos", difficulty: "Principiante", type: "Mancuernas" },
-  { name: "Dominadas", sets: 3, reps: 8, weight: "Cuerpo", muscleGroup: "Espalda", difficulty: "Intermedio", type: "Peso corporal" },
-  { name: "Fondos en paralelas", sets: 3, reps: 12, weight: "Cuerpo", muscleGroup: "Pecho", difficulty: "Intermedio", type: "Peso corporal" },
-  { name: "Extensión de cuádriceps", sets: 3, reps: 15, weight: "45kg", muscleGroup: "Piernas", difficulty: "Principiante", type: "Máquina" },
-];
+const API_URL = "http://localhost:8000";
+
+const getAuthHeaders = () => ({
+  Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+});
+
+interface Exercise {
+  id: number;
+  nombre: string;
+  grupo_muscular: string;
+  dificultad: string;
+  tipo: string;
+  series_recomendadas: number;
+  repeticiones_recomendadas: number;
+}
 
 const difficultyStyle: Record<string, string> = {
   Principiante: "bg-green-500/10 text-green-700 border-green-500/30",
@@ -33,27 +26,43 @@ const difficultyStyle: Record<string, string> = {
   Avanzado:     "bg-red-500/10 text-red-700 border-red-500/30",
 };
 
-const muscleGroups = ["Todos", ...Array.from(new Set(exercises.map((e) => e.muscleGroup)))];
-const difficulties = ["Todos", "Principiante", "Intermedio", "Avanzado"];
+const MUSCLE_GROUPS = ["Todos", "Pecho", "Espalda", "Hombros", "Piernas", "Bíceps", "Tríceps", "Core"];
+const DIFFICULTIES  = ["Todos", "Principiante", "Intermedio", "Avanzado"];
 
 const FitnessExercises = () => {
+  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [muscleFilter, setMuscleFilter] = useState("Todos");
   const [difficultyFilter, setDifficultyFilter] = useState("Todos");
 
-  const filtered = exercises.filter((ex) => {
-    const matchesSearch = ex.name.toLowerCase().includes(search.toLowerCase());
-    const matchesMuscle = muscleFilter === "Todos" || ex.muscleGroup === muscleFilter;
-    const matchesDifficulty = difficultyFilter === "Todos" || ex.difficulty === difficultyFilter;
-    return matchesSearch && matchesMuscle && matchesDifficulty;
-  });
+  useEffect(() => {
+    const fetchExercises = async () => {
+      try {
+        const params = new URLSearchParams();
+        if (muscleFilter !== "Todos") params.set("grupo_muscular", muscleFilter);
+        if (difficultyFilter !== "Todos") params.set("dificultad", difficultyFilter);
+        if (search) params.set("search", search);
+
+        const res = await fetch(`${API_URL}/fitness/exercises?${params}`, {
+          headers: getAuthHeaders(),
+        });
+        if (res.ok) setExercises(await res.json());
+      } catch {
+        // error silencioso
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchExercises();
+  }, [search, muscleFilter, difficultyFilter]);
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>Base de Datos de Ejercicios</CardTitle>
         <CardDescription>
-          Ejercicios disponibles con grupo muscular, dificultad y tipo de material
+          {exercises.length} ejercicios disponibles — filtra por músculo, dificultad o búsqueda
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -73,7 +82,7 @@ const FitnessExercises = () => {
               <SelectValue placeholder="Grupo muscular" />
             </SelectTrigger>
             <SelectContent>
-              {muscleGroups.map((g) => (
+              {MUSCLE_GROUPS.map((g) => (
                 <SelectItem key={g} value={g}>{g}</SelectItem>
               ))}
             </SelectContent>
@@ -83,7 +92,7 @@ const FitnessExercises = () => {
               <SelectValue placeholder="Dificultad" />
             </SelectTrigger>
             <SelectContent>
-              {difficulties.map((d) => (
+              {DIFFICULTIES.map((d) => (
                 <SelectItem key={d} value={d}>{d}</SelectItem>
               ))}
             </SelectContent>
@@ -91,56 +100,57 @@ const FitnessExercises = () => {
         </div>
 
         {/* Lista */}
-        <div className="space-y-3">
-          {filtered.length === 0 ? (
-            <p className="text-center text-sm text-muted-foreground py-8">
-              No se encontraron ejercicios con ese filtro.
-            </p>
-          ) : (
-            filtered.map((exercise, index) => (
+        {loading ? (
+          <div className="flex items-center justify-center py-10 text-muted-foreground gap-2">
+            <Loader2 className="h-5 w-5 animate-spin" />
+            Cargando ejercicios...
+          </div>
+        ) : exercises.length === 0 ? (
+          <p className="text-center text-sm text-muted-foreground py-8">
+            No se encontraron ejercicios con ese filtro.
+          </p>
+        ) : (
+          <div className="space-y-2">
+            {exercises.map((exercise) => (
               <div
-                key={index}
+                key={exercise.id}
                 className="flex items-center justify-between p-4 rounded-lg border bg-card hover:bg-muted/50 transition-colors"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-full bg-blue-500/10">
+                  <div className="p-2 rounded-full bg-blue-500/10 shrink-0">
                     <Dumbbell className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">{exercise.name}</p>
+                    <p className="font-medium">{exercise.nombre}</p>
                     <div className="flex gap-1.5 mt-1 flex-wrap">
                       <span className="text-xs px-2 py-0.5 rounded-full border bg-muted text-muted-foreground">
-                        {exercise.muscleGroup}
+                        {exercise.grupo_muscular}
                       </span>
                       <span
-                        className={`text-xs px-2 py-0.5 rounded-full border ${difficultyStyle[exercise.difficulty] ?? difficultyStyle.Intermedio}`}
+                        className={`text-xs px-2 py-0.5 rounded-full border ${difficultyStyle[exercise.dificultad] ?? difficultyStyle.Intermedio}`}
                       >
-                        {exercise.difficulty}
+                        {exercise.dificultad}
                       </span>
                       <span className="text-xs px-2 py-0.5 rounded-full border bg-muted text-muted-foreground">
-                        {exercise.type}
+                        {exercise.tipo}
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-6 text-sm">
+                <div className="flex items-center gap-6 text-sm shrink-0">
                   <div className="text-center">
-                    <p className="font-medium">{exercise.sets}</p>
+                    <p className="font-medium">{exercise.series_recomendadas}</p>
                     <p className="text-muted-foreground text-xs">Series</p>
                   </div>
                   <div className="text-center">
-                    <p className="font-medium">{exercise.reps}</p>
+                    <p className="font-medium">{exercise.repeticiones_recomendadas}</p>
                     <p className="text-muted-foreground text-xs">Reps</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="font-medium">{exercise.weight}</p>
-                    <p className="text-muted-foreground text-xs">Peso</p>
                   </div>
                 </div>
               </div>
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </CardContent>
     </Card>
   );

@@ -28,6 +28,9 @@ class Settings(BaseSettings):
     # News API
     NEWS_API_KEY: str = os.getenv("NEWS_API_KEY", "")
 
+    # Anthropic / Claude API
+    ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
+
     class Config:
         env_file = ".env"
 

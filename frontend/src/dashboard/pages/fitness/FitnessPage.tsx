@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +9,6 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { User } from "lucide-react";
-import { useState } from "react";
 import FitnessUserProfile from "@/components/custom/fitness/FitnessUserProfile";
 import FitnessStats from "@/components/custom/fitness/FitnessStats";
 import FitnessWeekly from "@/components/custom/fitness/FitnessWeekly";
@@ -19,6 +19,13 @@ import FitnessProgress from "@/components/custom/fitness/FitnessProgress";
 
 export const FitnessPage = () => {
   const [profileOpen, setProfileOpen] = useState(false);
+  // refreshKey incrementa cuando el perfil se guarda → hijos se vuelven a renderizar
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const handleProfileSaved = () => {
+    setProfileOpen(false);
+    setRefreshKey((k) => k + 1);
+  };
 
   return (
     <div className="space-y-6">
@@ -35,8 +42,8 @@ export const FitnessPage = () => {
         </Button>
       </div>
 
-      <FitnessStats />
-      <FitnessWeekly />
+      <FitnessStats key={`stats-${refreshKey}`} />
+      <FitnessWeekly key={`weekly-${refreshKey}`} />
 
       <Tabs defaultValue="rutinas" className="space-y-4">
         <TabsList>
@@ -47,7 +54,7 @@ export const FitnessPage = () => {
         </TabsList>
 
         <TabsContent value="rutinas">
-          <FitnessRoutines />
+          <FitnessRoutines key={`routines-${refreshKey}`} />
         </TabsContent>
 
         <TabsContent value="ejercicios">
@@ -55,7 +62,7 @@ export const FitnessPage = () => {
         </TabsContent>
 
         <TabsContent value="nutricion">
-          <FitnessNutrition />
+          <FitnessNutrition key={`nutrition-${refreshKey}`} />
         </TabsContent>
 
         <TabsContent value="progreso">
@@ -75,11 +82,10 @@ export const FitnessPage = () => {
             </SheetDescription>
           </SheetHeader>
           <div className="px-4 pb-6">
-            <FitnessUserProfile onSave={() => setProfileOpen(false)} />
+            <FitnessUserProfile onSave={handleProfileSaved} />
           </div>
         </SheetContent>
       </Sheet>
     </div>
   );
 };
-

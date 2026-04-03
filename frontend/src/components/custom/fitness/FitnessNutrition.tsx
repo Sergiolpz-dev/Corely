@@ -1,195 +1,382 @@
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Apple, Beef, Egg, Salad, Flame } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sparkles, Loader2, Salad, Flame, Apple, Egg, Beef } from "lucide-react";
 
-const mealPlan = [
-  {
-    meal: "Desayuno",
-    time: "07:30",
-    foods: [
-      { name: "Avena con plátano", cal: 350, protein: 12, carbs: 55, fat: 8 },
-      { name: "Huevos revueltos (3)", cal: 210, protein: 18, carbs: 2, fat: 14 },
-    ],
-  },
-  {
-    meal: "Almuerzo",
-    time: "13:00",
-    foods: [
-      { name: "Pechuga de pollo (200g)", cal: 330, protein: 62, carbs: 0, fat: 7 },
-      { name: "Arroz integral (150g)", cal: 170, protein: 4, carbs: 36, fat: 1.5 },
-      { name: "Ensalada mixta", cal: 80, protein: 3, carbs: 12, fat: 2 },
-    ],
-  },
-  {
-    meal: "Merienda",
-    time: "17:00",
-    foods: [
-      { name: "Batido de proteínas", cal: 180, protein: 30, carbs: 8, fat: 3 },
-      { name: "Frutos secos (30g)", cal: 175, protein: 5, carbs: 6, fat: 15 },
-    ],
-  },
-  {
-    meal: "Cena",
-    time: "20:30",
-    foods: [
-      { name: "Salmón a la plancha (180g)", cal: 370, protein: 40, carbs: 0, fat: 22 },
-      { name: "Verduras salteadas", cal: 120, protein: 4, carbs: 18, fat: 4 },
-    ],
-  },
-];
+const API_URL = "http://localhost:8000";
 
-const foodDatabase = [
-  { name: "Pechuga de pollo", cal: 165, protein: 31, carbs: 0, fat: 3.6, tags: ["Alto en proteína"], allergies: [] },
-  { name: "Arroz integral", cal: 112, protein: 2.6, carbs: 24, fat: 0.9, tags: ["Integral"], allergies: ["Gluten"] },
-  { name: "Huevo entero", cal: 155, protein: 13, carbs: 1.1, fat: 11, tags: ["Alto en proteína"], allergies: ["Huevo"] },
-  { name: "Avena", cal: 389, protein: 17, carbs: 66, fat: 7, tags: ["Integral", "Vegano"], allergies: ["Gluten"] },
-  { name: "Salmón", cal: 208, protein: 20, carbs: 0, fat: 13, tags: ["Omega-3"], allergies: ["Pescado"] },
-  { name: "Tofu", cal: 76, protein: 8, carbs: 1.9, fat: 4.8, tags: ["Vegano", "Vegetariano"], allergies: ["Soja"] },
-  { name: "Batata", cal: 86, protein: 1.6, carbs: 20, fat: 0.1, tags: ["Vegano"], allergies: [] },
-  { name: "Yogur griego", cal: 59, protein: 10, carbs: 3.6, fat: 0.7, tags: ["Alto en proteína"], allergies: ["Lactosa"] },
-];
+const getAuthHeaders = () => ({
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+});
 
-const dailyTotals = {
-  calories: { current: 1985, goal: 2400 },
-  protein: { current: 178, goal: 180 },
-  carbs: { current: 137, goal: 250 },
-  fat: { current: 76, goal: 80 },
-};
+interface Alimento {
+  nombre: string;
+  cantidad_g: number;
+  calorias: number;
+  proteinas: number;
+  carbohidratos: number;
+  grasas: number;
+}
+
+interface Comida {
+  nombre: string;
+  hora: string;
+  alimentos: Alimento[];
+  total_calorias: number;
+}
+
+interface MacrosObjetivo {
+  proteinas_g: number;
+  carbohidratos_g: number;
+  grasas_g: number;
+}
+
+interface MealPlan {
+  id: number;
+  semana_inicio: string;
+  calorias_objetivo: number;
+  plan: {
+    calorias_objetivo: number;
+    macros_objetivo: MacrosObjetivo;
+    comidas: Comida[];
+    consejos: string[];
+  };
+}
+
+interface FoodItem {
+  id: number;
+  nombre: string;
+  calorias: number;
+  proteinas: number;
+  carbohidratos: number;
+  grasas: number;
+  alergias: string[];
+  tags: string[];
+}
 
 const FitnessNutrition = () => {
+  const [mealPlan, setMealPlan] = useState<MealPlan | null>(null);
+  const [foods, setFoods] = useState<FoodItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const [loadingFoods, setLoadingFoods] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchMealPlan = async () => {
+      try {
+        const res = await fetch(`${API_URL}/fitness/meal-plan/current`, {
+          headers: getAuthHeaders(),
+        });
+        if (res.ok) setMealPlan(await res.json());
+      } catch {
+        // sin plan
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMealPlan();
+  }, []);
+
+  const loadFoods = async () => {
+    if (foods.length > 0) return;
+    setLoadingFoods(true);
+    try {
+      const res = await fetch(`${API_URL}/fitness/foods`, { headers: getAuthHeaders() });
+      if (res.ok) setFoods(await res.json());
+    } catch {
+      // error silencioso
+    } finally {
+      setLoadingFoods(false);
+    }
+  };
+
+  const handleGenerate = async () => {
+    setGenerating(true);
+    setError(null);
+    try {
+      const res = await fetch(`${API_URL}/fitness/meal-plan/generate`, {
+        method: "POST",
+        headers: getAuthHeaders(),
+      });
+      if (res.ok) {
+        setMealPlan(await res.json());
+      } else {
+        const err = await res.json();
+        setError(err.detail ?? "Error al generar el plan");
+      }
+    } catch {
+      setError("Error de conexión al generar el plan");
+    } finally {
+      setGenerating(false);
+    }
+  };
+
+  const totalMacros = mealPlan?.plan?.comidas?.reduce(
+    (acc, comida) => {
+      comida.alimentos.forEach((a) => {
+        acc.calorias += a.calorias;
+        acc.proteinas += a.proteinas;
+        acc.carbohidratos += a.carbohidratos;
+        acc.grasas += a.grasas;
+      });
+      return acc;
+    },
+    { calorias: 0, proteinas: 0, carbohidratos: 0, grasas: 0 }
+  );
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-16 text-muted-foreground gap-2">
+        <Loader2 className="h-5 w-5 animate-spin" />
+        Cargando plan nutricional...
+      </div>
+    );
+  }
+
   return (
-    <Tabs defaultValue="plan" className="space-y-4">
+    <Tabs defaultValue="plan" className="space-y-4" onValueChange={(v) => v === "alimentos" && loadFoods()}>
       <TabsList>
         <TabsTrigger value="plan">Plan del día</TabsTrigger>
         <TabsTrigger value="alimentos">Base de alimentos</TabsTrigger>
       </TabsList>
 
+      {/* ── Plan del día ────────────────────────────────────── */}
       <TabsContent value="plan" className="space-y-4">
-        {/* Resumen diario */}
-        <div className="grid gap-4 md:grid-cols-4">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Calorías</CardTitle>
-              <Flame className="h-4 w-4 text-orange-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{dailyTotals.calories.current}</div>
-              <p className="text-xs text-muted-foreground">de {dailyTotals.calories.goal} kcal</p>
-              <Progress value={(dailyTotals.calories.current / dailyTotals.calories.goal) * 100} className="h-1.5 mt-2" />
+        {!mealPlan ? (
+          <Card className="border-dashed">
+            <CardContent className="flex flex-col items-center justify-center py-16 gap-4">
+              <div className="p-4 rounded-full bg-green-500/10">
+                <Salad className="h-8 w-8 text-green-600" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-semibold text-lg">Sin plan nutricional esta semana</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Genera un plan de alimentación adaptado a tu perfil y objetivos
+                </p>
+              </div>
+              {error && (
+                <p className="text-sm text-red-600 bg-red-500/10 px-3 py-2 rounded-lg border border-red-500/20">
+                  {error}
+                </p>
+              )}
+              <Button
+                className="bg-green-600 hover:bg-green-700 text-white gap-2"
+                onClick={handleGenerate}
+                disabled={generating}
+              >
+                {generating ? (
+                  <><Loader2 className="h-4 w-4 animate-spin" />Generando plan...</>
+                ) : (
+                  <><Sparkles className="h-4 w-4" />Generar plan con IA</>
+                )}
+              </Button>
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Proteínas</CardTitle>
-              <Beef className="h-4 w-4 text-red-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{dailyTotals.protein.current}g</div>
-              <p className="text-xs text-muted-foreground">de {dailyTotals.protein.goal}g</p>
-              <Progress value={(dailyTotals.protein.current / dailyTotals.protein.goal) * 100} className="h-1.5 mt-2" />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Carbohidratos</CardTitle>
-              <Apple className="h-4 w-4 text-green-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{dailyTotals.carbs.current}g</div>
-              <p className="text-xs text-muted-foreground">de {dailyTotals.carbs.goal}g</p>
-              <Progress value={(dailyTotals.carbs.current / dailyTotals.carbs.goal) * 100} className="h-1.5 mt-2" />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Grasas</CardTitle>
-              <Egg className="h-4 w-4 text-yellow-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{dailyTotals.fat.current}g</div>
-              <p className="text-xs text-muted-foreground">de {dailyTotals.fat.goal}g</p>
-              <Progress value={(dailyTotals.fat.current / dailyTotals.fat.goal) * 100} className="h-1.5 mt-2" />
-            </CardContent>
-          </Card>
-        </div>
+        ) : (
+          <>
+            {/* Macros resumen */}
+            <div className="grid gap-4 md:grid-cols-4">
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Calorías</CardTitle>
+                  <Flame className="h-4 w-4 text-orange-500" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-orange-600">
+                    {Math.round(totalMacros?.calorias ?? 0)}
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    de {mealPlan.calorias_objetivo} kcal objetivo
+                  </p>
+                  <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-orange-500"
+                      style={{ width: `${Math.min(100, ((totalMacros?.calorias ?? 0) / mealPlan.calorias_objetivo) * 100)}%` }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Proteínas</CardTitle>
+                  <Beef className="h-4 w-4 text-red-500" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-red-600">
+                    {Math.round(totalMacros?.proteinas ?? 0)}g
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    obj: {mealPlan.plan.macros_objetivo?.proteinas_g ?? "—"}g
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Carbohidratos</CardTitle>
+                  <Apple className="h-4 w-4 text-green-500" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-green-600">
+                    {Math.round(totalMacros?.carbohidratos ?? 0)}g
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    obj: {mealPlan.plan.macros_objetivo?.carbohidratos_g ?? "—"}g
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Grasas</CardTitle>
+                  <Egg className="h-4 w-4 text-yellow-500" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-yellow-600">
+                    {Math.round(totalMacros?.grasas ?? 0)}g
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    obj: {mealPlan.plan.macros_objetivo?.grasas_g ?? "—"}g
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
 
-        {/* Plan de comidas */}
-        <div className="space-y-4">
-          {mealPlan.map((meal, idx) => (
-            <Card key={idx}>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg">{meal.meal}</CardTitle>
-                  <Badge variant="outline">{meal.time}</Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {meal.foods.map((food, i) => (
-                    <div key={i} className="flex items-center justify-between p-3 rounded-lg border bg-muted/30">
-                      <span className="font-medium text-sm">{food.name}</span>
-                      <div className="flex gap-4 text-xs text-muted-foreground">
-                        <span>{food.cal} kcal</span>
-                        <span className="text-red-500">{food.protein}g P</span>
-                        <span className="text-green-500">{food.carbs}g C</span>
-                        <span className="text-yellow-500">{food.fat}g G</span>
+            {/* Comidas */}
+            <div className="space-y-3">
+              {mealPlan.plan.comidas?.map((comida, idx) => (
+                <Card key={idx}>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-base">{comida.nombre}</CardTitle>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-muted-foreground border px-2 py-0.5 rounded-full">
+                          {comida.hora}
+                        </span>
+                        <span className="text-xs font-medium text-orange-600">
+                          {Math.round(comida.total_calorias)} kcal
+                        </span>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {comida.alimentos.map((alimento, i) => (
+                        <div key={i} className="flex items-center justify-between p-2.5 rounded-lg border bg-muted/30">
+                          <div>
+                            <span className="text-sm font-medium">{alimento.nombre}</span>
+                            <span className="text-xs text-muted-foreground ml-2">{alimento.cantidad_g}g</span>
+                          </div>
+                          <div className="flex gap-3 text-xs text-muted-foreground">
+                            <span className="text-orange-600 font-medium">{Math.round(alimento.calorias)} kcal</span>
+                            <span className="text-red-500">{Math.round(alimento.proteinas)}g P</span>
+                            <span className="text-green-500">{Math.round(alimento.carbohidratos)}g C</span>
+                            <span className="text-yellow-500">{Math.round(alimento.grasas)}g G</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Consejos */}
+            {mealPlan.plan.consejos?.length > 0 && (
+              <Card className="bg-green-500/5 border-green-500/20">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm flex items-center gap-2 text-green-700">
+                    <Sparkles className="h-4 w-4" />
+                    Consejos nutricionales
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-1">
+                    {mealPlan.plan.consejos.map((c, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex gap-2">
+                        <span className="text-green-500 font-bold shrink-0">·</span>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
+            <div className="flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                onClick={handleGenerate}
+                disabled={generating}
+              >
+                {generating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Sparkles className="h-3.5 w-3.5" />}
+                Nuevo plan
+              </Button>
+            </div>
+          </>
+        )}
       </TabsContent>
 
-      <TabsContent value="alimentos" className="space-y-4">
+      {/* ── Base de alimentos ───────────────────────────────── */}
+      <TabsContent value="alimentos">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Salad className="h-5 w-5 text-primary" />
+              <Salad className="h-5 w-5 text-green-600" />
               Base de Datos de Alimentos
             </CardTitle>
-            <CardDescription>Alimentos disponibles con información nutricional por 100g</CardDescription>
+            <CardDescription>Información nutricional por 100g</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              {foodDatabase.map((food, idx) => (
-                <div key={idx} className="flex items-center justify-between p-4 rounded-lg border">
-                  <div>
-                    <p className="font-medium">{food.name}</p>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {food.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
-                      ))}
-                      {food.allergies.map((a) => (
-                        <Badge key={a} variant="destructive" className="text-xs">{a}</Badge>
-                      ))}
+            {loadingFoods ? (
+              <div className="flex items-center justify-center py-10 text-muted-foreground gap-2">
+                <Loader2 className="h-5 w-5 animate-spin" />
+                Cargando alimentos...
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {foods.map((food) => (
+                  <div key={food.id} className="flex items-center justify-between p-3 rounded-lg border bg-card hover:bg-muted/50 transition-colors">
+                    <div>
+                      <p className="font-medium text-sm">{food.nombre}</p>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {food.tags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="text-xs px-1.5 py-0.5 rounded-full bg-green-500/10 text-green-700 border border-green-500/20">
+                            {tag}
+                          </span>
+                        ))}
+                        {food.alergias.map((a) => (
+                          <span key={a} className="text-xs px-1.5 py-0.5 rounded-full bg-red-500/10 text-red-700 border border-red-500/20">
+                            {a}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex gap-4 text-sm text-right">
+                      <div>
+                        <p className="font-bold text-orange-600">{food.calorias}</p>
+                        <p className="text-xs text-muted-foreground">kcal</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-red-500">{food.proteinas}g</p>
+                        <p className="text-xs text-muted-foreground">Prot</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-green-500">{food.carbohidratos}g</p>
+                        <p className="text-xs text-muted-foreground">Carbs</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-yellow-500">{food.grasas}g</p>
+                        <p className="text-xs text-muted-foreground">Grasas</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex gap-5 text-sm text-right">
-                    <div>
-                      <p className="font-bold">{food.cal}</p>
-                      <p className="text-xs text-muted-foreground">kcal</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-red-500">{food.protein}g</p>
-                      <p className="text-xs text-muted-foreground">Prot</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-green-500">{food.carbs}g</p>
-                      <p className="text-xs text-muted-foreground">Carbs</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-yellow-500">{food.fat}g</p>
-                      <p className="text-xs text-muted-foreground">Grasas</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </CardContent>
         </Card>
       </TabsContent>
