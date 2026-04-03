@@ -1,0 +1,1479 @@
+{
+
+    "status": "ok",
+    "totalResults": 1929,
+    -
+    "articles": [
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Seeking Alpha"
+            },
+            "author": "Wall Street Breakfast",
+            "title": "Wall Street Week Ahead",
+            "description": "Holiday-shortened week preview: key economic data, Fed signals, Nike earnings, and energy volatility amid Middle East tensions.",
+            "url": "https://seekingalpha.com/article/4886914-wall-street-week-ahead",
+            "urlToImage": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/2244504188/image_2244504188.jpg?io=getty-c-w1536",
+            "publishedAt": "2026-03-29T11:01:11Z",
+            "content": "Listen on the go! A daily podcast of Wall Street Breakfast will be available by 8:00 a.m. on Seeking Alpha, iTunes, Spotify.\r\nD-Bittel/iStock via Getty Images\r\nUp for a challenge? Test your knowledge… [+4828 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Mike Pearl",
+            "title": "Ahead of the SpaceX IPO, xAI Has Now Shed All 11 of Its Non-Elon Musk Founders",
+            "description": "What does it mean that everyone who shaped the company other than Elon Musk is gone now?",
+            "url": "https://gizmodo.com/ahead-of-the-spacex-ipo-xai-has-now-shed-all-11-of-its-non-elon-musk-founders-2000739465",
+            "urlToImage": "https://gizmodo.com/app/uploads/2025/12/shutterstock_2396034011-1200x675.jpg",
+            "publishedAt": "2026-03-29T09:00:39Z",
+            "content": "xAI was founded in 2023, and its already transforming radically. Now a key part of a bizarre conglomerate that could soon be one of the worlds biggest publicly traded companies, it feels like xAI in … [+6062 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "news-com-au",
+                "name": "News.com.au"
+            },
+            "author": "News.com.au",
+            "title": "Woman vandalizes ex-boyfriend’s Tesla in ‘petty’ act after bad split",
+            "description": "The camera footage shows the woman packing boxes into the back of the Tesla, but her focus is clearly on damaging the car.",
+            "url": "https://www.news.com.au/lifestyle/relationships/woman-caught-on-camera-smashing-exboyfriends-tesla/news-story/1a785c717b37a947159dc016bdb94334",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-9ir5jsfpr-1774767274906.jpg?quality=75&strip=all&1774752936&w=1200",
+            "publishedAt": "2026-03-29T07:05:17Z",
+            "content": "A woman was caught on camera vandalizing her ex-boyfriends Tesla in what has been described as a petty act of post-breakup revenge.\r\nIn the clip, which has gained over 400,000 views on Instagram afte… [+2480 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Rac.co.uk"
+            },
+            "author": null,
+            "title": "The road to electric – in charts and data [UK]",
+            "description": "The progress the UK is making as we head towards 2030, with easy-read charts and graphics to help you make sense of the numbers.",
+            "url": "https://www.rac.co.uk/drive/electric-cars/choosing/road-to-electric/",
+            "urlToImage": null,
+            "publishedAt": "2026-03-29T07:00:48Z",
+            "content": "What is the RAC doing to help drivers make the switch to electric?\r\nThe RAC is leading the way when it comes to supporting drivers in the switch to electric vehicles.\r\nAn ever-increasing number of ou… [+3719 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Livemint"
+            },
+            "author": "Sayantani Biswas",
+            "title": "Elon Musk's xAI has lost all 8 of its original co-founders since January- Ross Nordeen is the last to go",
+            "description": "The departure of Ross Nordeen, the final member of xAI's founding team, marks the end of an era at one of the world's most valuable AI companies — and raises fresh questions about stability ahead of a landmark SpaceX IPO. Sourced from Business Insider reporti…",
+            "url": "https://www.livemint.com/companies/news/elon-musks-xai-has-lost-all-8-of-its-original-co-founders-since-january-ross-nordeen-is-the-last-to-go-11774757797365.html",
+            "urlToImage": "https://www.livemint.com/lm-img/img/2026/03/29/1600x900/logo/SPACEX-IPO-INVESTORS-SHARES-3_1774758007495_1774758075384.JPG",
+            "publishedAt": "2026-03-29T04:31:13Z",
+            "content": "The last of Elon Musk's original co-founding team at xAI has now left the company. Ross Nordeen, one of 11 people who built the artificial intelligence startup alongside Musk from its earliest days, … [+3890 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Sanjosehockeynow.com"
+            },
+            "author": "Sheng Peng",
+            "title": "Sharks Win! Snap Losing Streak, 3-2 Over Blue Jackets",
+            "description": "COLUMBUS — The San Jose Sharks visit the Columbus Blue Jackets at Nationwide Arena. Igor Chernyshov (twice) and Macklin Celebrini, and the Sharks win 3-2! Period 1 Mateychuk goal: Miserable start. Mayers notes that could’ve been a Marchenko penalty on Eklund.…",
+            "url": "https://sanjosehockeynow.com/san-jose-sharks-columbus-blue-jackets-game-notes-71/",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/GRZawJ7oaCFNfHYZe8TYkQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04NzQ7Y2Y9d2VicA--/https://media.zenfs.com/en/san_jose_hockey_now_articles_128/6bc8f9e5acaaf112d6746dabba0b95c5",
+            "publishedAt": "2026-03-28T23:40:46Z",
+            "content": "COLUMBUS The San Jose Sharks visit the Columbus Blue Jackets at Nationwide Arena.\r\nIgor Chernyshov (twice) and Macklin Celebrini, and the Sharks win 3-2!\r\nMateychuk goal: Miserable start. Mayers note… [+4734 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Ananya Gairola",
+            "title": "SpaceX And Anthropic IPO Frenzy Begins Early As REX Shares, Tuttle Capital File For 2x Leveraged ETFs",
+            "description": "REX Shares and Tuttle Capital Management have filed for exchange-traded funds (ETFs) aimed to deliver twice the daily performance of SpaceX and Anthropic...",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-anthropic-ipo-frenzy-begins-223141127.html",
+            "urlToImage": "https://s.yimg.com/os/en/Benzinga/552002b905e872e63dbb41ede8949d78",
+            "publishedAt": "2026-03-28T22:31:41Z",
+            "content": "REX Shares and Tuttle Capital Management have filed for exchange-traded funds (ETFs) aimed to deliver twice the daily performance of SpaceX and Anthropic once the companies begin trading.\r\nThe propos… [+1575 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "New Zealand Herald"
+            },
+            "author": "Nadine Higgins",
+            "title": "EVs are cheaper to run but are they cheaper to own? - Nadine Higgins",
+            "description": "Even with road user charges, a Tesla can cost under half a Hyundai to run.",
+            "url": "https://www.nzherald.co.nz/business/personal-finance/investment/evs-are-cheaper-to-run-but-are-they-cheaper-to-own-nadine-higgins/premium/YQGOSVN6O5HDFCFGA5QWNJG6LI/",
+            "urlToImage": "https://www.nzherald.co.nz/resizer/v2/2GEVLYMTNVDIZKI2ZMFUNSKMJ4.JPG?auth=aa5c980c411738c195afa7da7a52e41cceaf450d0f73d2fdd111bc1d98739282&width=1200&height=675&quality=70&focal=3185%2C1616&smart=false",
+            "publishedAt": "2026-03-28T19:59:00Z",
+            "content": "Ive gone down a modelling rabbit hole and have found there are SO many variables to consider the cost of fuel, electricity, vehicle efficiency, purchase price, financing, resale value and your behavi… [+4396 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "The Daily Progress"
+            },
+            "author": "HAWES SPENCER The Daily Progress",
+            "title": "An amputee cornhole champ is accused of murder. His Tesla may have filmed him do it.",
+            "description": "Dayton Webber, a quadruple amputee cornhole champion, is accused of fatally shooting a friend in his car. That car, a Tesla, may have valuable footage of the crime.",
+            "url": "https://dailyprogress.com/news/local/crime-courts/article_3d150be7-b75d-41cf-9cae-078b7548fa40.html",
+            "urlToImage": "https://bloximages.newyork1.vip.townnews.com/richmond.com/content/tncms/assets/v3/editorial/9/f3/9f339e5a-7a18-57e8-a01b-6beb3df3b431/69c81ad24b3d7.preview.png?crop=1233%2C647%2C0%2C436&resize=1200%2C630&order=crop%2Cresize",
+            "publishedAt": "2026-03-28T18:30:00Z",
+            "content": "Qaudruple amputee Dayton Webber's success at cornhole has made him a popular motivational speaker, earning more than $100,000 from speaking engagements in 2025 alone."
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-next-web",
+                "name": "The Next Web"
+            },
+            "author": "Alina Maria Stan",
+            "title": "All 11 xAI co-founders have now reportedly left Elon Musk’s AI company",
+            "description": "Every co-founder Elon Musk recruited to build xAI has now reportedly left the company. Manuel Kroiss, who led the pretraining team, told people this month that he was departing. Ross Nordeen, described by Business Insider as Musk’s “right-hand operator,” left…",
+            "url": "https://thenextweb.com/news/xai-all-cofounders-departed-musk-spacex-rebuild/",
+            "urlToImage": "https://img-cdn.tnwcdn.com/image/tnw-blurple?filter_last=1&fit=1280%2C640&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2026%2F03%2Fxai-all-cofounders-departed-musk-spacex-rebuild.png&signature=134f6bcc42f6711dd8a342a194e7a5da",
+            "publishedAt": "2026-03-28T17:46:11Z",
+            "content": "Every co-founder Elon Musk recruited to build xAI has now reportedly left the company. Manuel Kroiss, who led the pretraining team, told people this month that he was departing. Ross Nordeen, describ… [+5714 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "SiliconANGLE News"
+            },
+            "author": "David Vellante and David Floyer",
+            "title": "The agentic AI gap: Vendors sprint, enterprises crawl",
+            "description": "The geopolitical dislocations ripping through the stock market and are filtering down to information technology budgets in the form of increased uncertainty. It seems that every quarter of budget optimism is followed with some external event that causes organ…",
+            "url": "https://siliconangle.com/2026/03/28/agentic-ai-gap-vendors-sprint-enterprises-crawl/",
+            "urlToImage": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/03/Gemini_Generated_Image_sqae07sqae07sqae-2048x1143.png",
+            "publishedAt": "2026-03-28T17:34:46Z",
+            "content": "The geopolitical dislocations ripping through the stock market and are filtering down to information technology budgets in the form of increased uncertainty.\r\nIt seems that every quarter of budget op… [+20130 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Hackaday"
+            },
+            "author": "Maya Posch",
+            "title": "Turning Tesla Model 3’s Computer Into a Desktop PC",
+            "description": "Like many high-tech companies Tesla runs a bug bounty program. But in the case of a car manufacturer, this means that you either already have one of their cars, are interested in buying one, or can…",
+            "url": "https://hackaday.com/2026/03/28/turning-tesla-model-3s-computer-into-a-desktop-pc/",
+            "urlToImage": "https://hackaday.com/wp-content/uploads/2026/03/teslacomp_feat.jpg",
+            "publishedAt": "2026-03-28T17:00:31Z",
+            "content": "Like many high-tech companies Tesla runs a bug bounty program. But in the case of a car manufacturer, this means that you either already have one of their cars, are interested in buying one, or can g… [+1216 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Anthony Ha",
+            "title": "Elon Musk’s last co-founder reportedly leaves xAI | TechCrunch",
+            "description": "Elon Musk’s last co-founder reportedly leaves xAI | TechCrunchtechcrunch.com",
+            "url": "https://techcrunch.com/2026/03/28/elon-musks-last-co-founder-reportedly-leaves-xai/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2026/02/elon-musk-world-economic-forum1.jpg?resize=1200,800",
+            "publishedAt": "2026-03-28T16:12:54Z",
+            "content": "Earlier this month, it looked like all but two of Elon Musks 11 co-founders at his AI startup xAI had departed the company. Now, according to Business Insider, the remaining two co-founders, Manuel K… [+829 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "fortune",
+                "name": "Fortune"
+            },
+            "author": "Claire Zillman",
+            "title": "Meta executives could earn nearly $1 billion each if they hit goals in pursuit of a $9 trillion valuation",
+            "description": "Moonshot compensation was once reserved for CEOs. Not anymore.",
+            "url": "https://fortune.com/2026/03/28/meta-executives-stock-options-9-trillion-market-capvaluation-ai/",
+            "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2026/03/GettyImages-2235448042-e1774644873797.jpg?resize=1200,600",
+            "publishedAt": "2026-03-28T15:38:33Z",
+            "content": "The moonshot compensation packages awarded to executives like Tesla CEO Elon Musk, Axon CEO Rick Smith, and DoorDash CEO Tony Xu in recent years have followed a predictable script: They promise astro… [+4626 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Elon Musk 'Starved The Balance Sheet' At Tesla Post-IPO To Keep Employees Sharp, Says Former TSLA President McNeill",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_18af0421-f693-4483-bb03-9d441aeea9c0",
+            "urlToImage": null,
+            "publishedAt": "2026-03-28T15:32:36Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Braclays Points Out CapEx Concerns for Tesla (TSLA) Stock",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_2e05b5c0-24d7-41ff-a7a4-718f14dd2599",
+            "urlToImage": null,
+            "publishedAt": "2026-03-28T15:18:45Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Futurism"
+            },
+            "author": "Frank Landymore",
+            "title": "Elon Musk’s Orbital Data Centers Are Staggeringly Huge",
+            "description": "Elon Musk wants to deploy up to one million of these orbital data centers, with even the \"mini\" version being staggeringly large.",
+            "url": "http://futurism.com/space/elon-musks-orbital-data-centers-huge",
+            "urlToImage": "https://futurism.com/wp-content/uploads/2026/03/elon-musks-orbital-data-centers-huge.jpg?quality=85&w=1200",
+            "publishedAt": "2026-03-28T15:15:00Z",
+            "content": "Can’t-miss innovations from the bleeding edge of science and tech\r\nElon Musk’s promises tend to follow a formula. They involve a number ending in “-illion,” pertaining to something which will be buil… [+3281 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Shane Galvin",
+            "title": "Quadruple amputee cornholer Dayton Webber had an ‘angry dark side’: Report",
+            "description": "Tori Mattingly dated the 27-year-old leisure sport star for four years until the pair threw in the beanbag in Feb. 2025, and then later dated victim Bradrick Michael Wells until June 2025, she dished to TMZ.",
+            "url": "https://nypost.com/2026/03/28/us-news/quadruple-amputee-cornholer-dayton-webber-had-an-angry-dark-side-report/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/03/124587340.jpg?quality=75&strip=all&w=1200",
+            "publishedAt": "2026-03-28T15:11:50Z",
+            "content": "A quadruple amputee pro-cornhole player accused of murdering his pal and dumping the body had an “angry dark side,” according to his ex-girlfriend.\r\nDayton Webber would “lash out” and refused to get … [+2012 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Grace Kay",
+            "title": "And then there were none: Musk's last xAI cofounder is out",
+            "description": "Elon Musk is shaking up xAI ahead of the SpaceX IPO. All 11 of his cofounders are gone, 8 of them since January.",
+            "url": "https://www.businessinsider.com/xai-cofounder-ross-nordeen-leaves-musk-preps-spacex-ipo-2026-3",
+            "urlToImage": "https://i.insider.com/69c7e1f2f573a637a75672b0?width=1200&format=jpeg",
+            "publishedAt": "2026-03-28T15:03:53Z",
+            "content": "Elon Musk has said xAI is being \"rebuilt from the foundations up.\"Adrees Latif/Reuters\r\n<ul><li>Elon Musk started xAI with 11 cofounders in 2023.</li><li>The last remaining one, Ross Nordeen, has now… [+3291 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Tesla (TSLA) Shares Up After Jim Cramer Said It Had Options",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_f5447a29-6bd2-4328-9661-9e1d5289e10f",
+            "urlToImage": null,
+            "publishedAt": "2026-03-28T13:49:28Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Vanguard’s VCR ETF Carries 40% Amazon and Tesla Exposure Dressed as Consumer Discretionary",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_d611b844-f7aa-4803-8ff2-1be82b9cb4b7",
+            "urlToImage": null,
+            "publishedAt": "2026-03-28T13:30:15Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Ibtimes.com.au"
+            },
+            "author": "Daniel Lee",
+            "title": "Top 10 Most Influential CEOs in the United States in 2026: AI, Innovation and Bold Leadership Define the Year",
+            "description": "As artificial intelligence reshapes industries and economic uncertainty tests corporate resilience, a select group of chief executives continues to set the pace for American business in 2026.",
+            "url": "https://www.ibtimes.com.au/top-10-most-influential-ceos-united-states-2026-ai-innovation-bold-leadership-define-year-1864780",
+            "urlToImage": "https://d.ibtimes.com.au/en/full/1838765/twitter-will-have-turn-over-additional-account-data-elon-musk-part-their-legal-fight.jpg",
+            "publishedAt": "2026-03-28T13:20:08Z",
+            "content": "As artificial intelligence reshapes industries and economic uncertainty tests corporate resilience, a select group of chief executives continues to set the pace for American business in 2026. From tr… [+8420 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Activistpost.com"
+            },
+            "author": "Editor",
+            "title": "COVID 2.0: Iran Operation Will Cause Lockdowns, Collapses & Crises That’ll Make Covid Look Like a Minor Disturbance",
+            "description": "This Season Of Sacrifice…  Get Ready For… THE FINAL LOCKDOWN!  WAR!  FAMINE!  DISEASE!  BLACKOUTS!  And, a Covid-type lockdown that will make 2020/21 look like child’s play.  We’re living in every dystopian novel and movie you’ve ever seen, and although most …",
+            "url": "https://www.activistpost.com/covid-2-0-iran-operation-will-cause-lockdowns-collapses-crises-thatll-make-covid-look-like-a-minor-disturbance/",
+            "urlToImage": "https://www.activistpost.com/wp-content/uploads/2026/03/Covid-2.0-Iran-THUMB-1024x576-1.jpg",
+            "publishedAt": "2026-03-28T12:57:00Z",
+            "content": "This Season Of Sacrifice \r\nGet Ready For\r\nTHE FINAL LOCKDOWN! \r\nWAR! \r\nFAMINE! \r\nDISEASE! \r\nBLACKOUTS! \r\nAnd, a Covid-type lockdown that will make 2020/21 look like childs play. \r\nWere living in ever… [+8231 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "The Indian Express"
+            },
+            "author": "Subhajit Roy",
+            "title": "MEA clears air on NYT report: ‘Telephone conversation on March 24 was between PM Narendra Modi and President Donald Trump only’",
+            "description": "The New York Times reported that billionaire businessman Elon Musk joined a phone call on Tuesday between US President Donald Trump and Prime Minister Narendra Modi.",
+            "url": "https://indianexpress.com/article/india/mea-clears-air-on-nyt-report-telephone-conversation-on-march-24-was-between-pm-narendra-modi-and-president-donald-trump-only-10606637/",
+            "urlToImage": "https://images.indianexpress.com/2026/03/US-6-9.jpg",
+            "publishedAt": "2026-03-28T12:49:11Z",
+            "content": "With The New York Times reporting that billionaire businessman Elon Musk participated in a phone call on Tuesday with US President Donald Trump and Prime Minister Narendra Modi, the Ministry of Exter… [+5730 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "BGR"
+            },
+            "author": "staff@bgr.com (José Adorno)",
+            "title": "Do All Cars With Apple CarPlay Also Have Android Auto?",
+            "description": "Apple CarPlay and Anroid Auto let you use your phone safely while driving, but do cars that support one always support the other? Here's what you need to know.",
+            "url": "https://www.bgr.com/2130061/do-cars-with-apple-carplay-also-have-android-auto/",
+            "urlToImage": "https://www.bgr.com/img/gallery/do-all-cars-with-apple-carplay-also-have-android-auto/l-intro-1774283076.jpg",
+            "publishedAt": "2026-03-28T12:47:00Z",
+            "content": "Electric carmaker Polestar offered integration for both operating systems in its Polestar 2 lineup, but if you get a Polestar 4, it only supports CarPlay natively, though you can log in to the Androi… [+1339 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Marina Temkin",
+            "title": "From Moon hotels to cattle herding: 8 startups investors chased at YC Demo Day | TechCrunch",
+            "description": "From Moon hotels to cattle herding: 8 startups investors chased at YC Demo Day | TechCrunchtechcrunch.com",
+            "url": "https://techcrunch.com/2026/03/28/from-moon-hotels-to-cattle-herding-8-startups-investors-chased-at-yc-demo-day/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2023/04/yc-sf.jpg?resize=1200,645",
+            "publishedAt": "2026-03-28T12:03:42Z",
+            "content": "Investors have flocked to Y Combinators Demo Days for years to get their hands on promising startups building cool tech. After all, the accelerator has produced some of the biggest tech companies in … [+5551 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "fortune",
+                "name": "Fortune"
+            },
+            "author": "Jessica Mathews",
+            "title": "Elon Musk’s companies, once welcomed in Baltimore with open arms, are now getting stiff-armed—or sued",
+            "description": "The demise of a Boring Co tunnel to the Ravens football stadium, within hours of the city's lawsuit against xAI, is a striking illustration of how Musk’s transformation into a political lightning rod may be taking a toll on his various ventures.",
+            "url": "https://fortune.com/2026/03/28/elon-musks-companies-once-welcomed-in-baltimore-with-open-arms-are-now-getting-stiff-armed-or-sued/",
+            "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2026/03/GettyImages-583755454.jpg?resize=1200,600",
+            "publishedAt": "2026-03-28T11:15:00Z",
+            "content": "Even a free infrastructure project wasnt enough to convince Maryland officials to work with Elon Musk.On Tuesday, Elon Musks tunnelling business, the Boring Company, started discussions with city off… [+6170 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Theron Mohamed",
+            "title": "JPMorgan's Jamie Dimon ripped into remote work again. WFH gurus say 5 days in the office is overkill.",
+            "description": "JPMorgan CEO Jamie Dimon said remote work hinders training, hurts collaboration, and feeds distraction. WFH gurus said a balance is probably best.",
+            "url": "https://www.businessinsider.com/jpmorgan-jamie-dimon-remote-work-wfh-office-return-musk-schmidt-2026-3",
+            "urlToImage": "https://i.insider.com/69c6a8f5e99557fb1b08a01b?width=1200&format=jpeg",
+            "publishedAt": "2026-03-28T11:03:01Z",
+            "content": "Jamie DimonAndrew Harnik/AP\r\n<ul><li>Jamie Dimon issued a scathing critique of remote work at the Hill and Valley Forum this week.</li><li>The JPMorgan CEO said young employees learn best in person, … [+4691 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Eric Spitznagel",
+            "title": "Inside the fallout between Gavin Newsom and Elon Musk, as their war of words gets worse by the day",
+            "description": "What the feud reveals, underneath all the posturing, is that Newsom and Musk were never really allies.",
+            "url": "https://nypost.com/2026/03/28/tech/inside-the-fallout-between-gavin-newsom-and-elon-musk/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/03/29N.GAVIN-VS-ELON-ANIMATION-WEB-SMOKE.jpeg?quality=75&strip=all&w=1200",
+            "publishedAt": "2026-03-28T11:00:00Z",
+            "content": "In February 2023 California governor Gavin Newsom and Elon Musk stood side by side at a press conference celebrating Teslas new AI innovation lab in Palo Alto.\r\nThey traded jokes about a $100,000 dep… [+10678 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Ritholtz.com"
+            },
+            "author": "Barry Ritholtz",
+            "title": "10 Weekend Reads",
+            "description": "The weekend is here! Pour yourself a mug of Danish Blend coffee, grab a seat outside, and get ready for our longer-form weekend reads: • God is a comedian A stiff drink is recommended. A philosophical meditation on the absurdity of the current moment, deliver…",
+            "url": "https://ritholtz.com/2026/03/10-weekend-reads-84/",
+            "urlToImage": "https://ritholtz.com/wp-content/uploads/2029/12/eightninefigures.png",
+            "publishedAt": "2026-03-28T10:30:10Z",
+            "content": "The weekend is here! Pour yourself a mug of Danish Blend coffee, grab a seat outside, and get ready for our longer-form weekend reads:God is a comedian A stiff drink is recommended. A philosophical m… [+3504 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Monevator.com"
+            },
+            "author": "The Investor",
+            "title": "Weekend reading: National scandal",
+            "description": "What caught my eye this week. Considering the high hurdle that politicians and business leaders have set themselves for something to be considered a sacking offence, I was surprised to see the boss of National Savings & Investments (NS&I) resign this week. Of…",
+            "url": "https://monevator.com/weekend-reading-national-scandal/",
+            "urlToImage": "https://monevator.com/wp-content/uploads/2021/03/Weekend-Reading-Social.png",
+            "publishedAt": "2026-03-28T10:14:18Z",
+            "content": "What caught my eye this week.\r\nConsidering the high hurdle that politicians and business leaders have set themselves for something to be considered a sacking offence, I was surprised to see the boss … [+8583 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "fortune",
+                "name": "Fortune"
+            },
+            "author": "Marco Quiroz-Gutierrez",
+            "title": "Elon Musk’s name alone is turning Nashville residents against his tunnel project, survey shows",
+            "description": "The percentage of residents opposed to the Boring Company’s Music City Loop jumped from 35% to 51% when Musk’s name was mentioned.",
+            "url": "https://fortune.com/2026/03/28/elon-musk-boring-company-nashville-music-city-loop-pushback-tesla-donald-trump-politics/",
+            "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2026/03/GettyImages-1074386506-e1774642866877.jpg?resize=1200,600",
+            "publishedAt": "2026-03-28T10:02:00Z",
+            "content": "Elon Musks Boring Company is tunneling underneath Nashville and residents arent happyparticularly that its Musk who is doing it.A new survey by Vanderbilt University found that 35% of Nashville resid… [+3133 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Acecomments.mu.nu"
+            },
+            "author": "Pixy Misa",
+            "title": "Daily News Stuff 28 March 2026",
+            "description": "Top Story Windows crashes three times as often as MacOS. (TechSpot) MacOS is that bad, huh? Some glitches with the sites aside, this server has been running nonstop for two years, and that's pretty typical for Linux. It only reboots...",
+            "url": "https://acecomments.mu.nu/?post=419090",
+            "urlToImage": null,
+            "publishedAt": "2026-03-28T08:00:00Z",
+            "content": "<li>LG is shipping 1Hz display panels for laptops. (PC World)That is they can refresh as little as once per second, if you're just sitting there looking at a static screen - or up to 120Hz if the dis… [+1593 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Autocar"
+            },
+            "author": "John Evans",
+            "title": "Fun for all wages: Bag a bargain sports car this spring",
+            "description": "Factory-fresh performance is the preserve of the wealthy, but the used market is full of affordable diamonds\n\nWe all love a bargain, but what exactly is a bargain? According to the dictionary, it's something that costs less than its true value.\r\n\nIt's difficu…",
+            "url": "https://www.autocar.co.uk/car-news/features/fun-all-wages-bag-bargain-sports-car-spring",
+            "urlToImage": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/usedperformance.jpg",
+            "publishedAt": "2026-03-28T07:00:00Z",
+            "content": "We all love a bargain, but what exactly is a bargain? According to the dictionary, it's something that costs less than its true value.\r\nIt's difficult to imagine the motor trade offering anything for… [+2937 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Independent.ie"
+            },
+            "author": "Faiz Siddiqui",
+            "title": "Why Elon Musk believes replacing humans with robots will usher in ‘world of amazing abundance’",
+            "description": "In the utopia proposed by Elon Musk, billions of robots perform all necessary work. A network of autonomous vehicles and humanoids, fuelled by solar energy, provide boundless resources. Poverty is eliminated. Work is optional.",
+            "url": "https://www.independent.ie/world-news/north-america/why-elon-musk-believes-replacing-humans-with-robots-will-usher-in-world-of-amazing-abundance/a1964134362.html",
+            "urlToImage": "https://focus.independent.ie/thumbor/0lr7lrdTHTKJA-fjsgIM1deTL7s=/0x0:3238x2158/629x0/prod-mh-ireland/363d95b9-68e6-4d66-a731-4e9261a6a97c/5d002f5a-196c-4fe7-9c4d-5d4a4ca81659/363d95b9-68e6-4d66-a731-4e9261a6a97c.jpg",
+            "publishedAt": "2026-03-28T05:30:00Z",
+            "content": "Tesla is betting big on physical AI, but others fear the impact of lost jobs on society\r\nIn the utopia proposed by Elon Musk, billions of robots perform all necessary work. A network of autonomous ve… [+198 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-irish-times",
+                "name": "The Irish Times"
+            },
+            "author": "Ian Hughes",
+            "title": "Muskism: essential to understanding where we are and how we got here",
+            "description": "A convincing case that Muskism has been possible only because our culture celebrates gross inequality and derides empathy and the common good",
+            "url": "https://www.irishtimes.com/culture/books/review/2026/03/28/muskism-by-quinn-slobodian-essential-to-understanding-where-we-are-and-how-we-got-here/",
+            "urlToImage": "https://www.irishtimes.com/resizer/v2/EADFW3KR4KNSB4MDOSLCSQX3NI.jpg?smart=true&auth=3103e76c18f026e38e610235990d52fdbac35bef6b73d590669a7f65e3b0234e&width=1200&height=630",
+            "publishedAt": "2026-03-28T04:35:00Z",
+            "content": "Muskism: A Guide for the Perplexed\r\nAuthor: Quinn Slobodian and Ben Tarnoff \r\nMuskism: A Guide for the Perplexed is not a standard biography that seeks to understand Elon Musk. Instead, it poses wide… [+2370 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Katherine Li",
+            "title": "Musk pitched Zuckerberg on his unsolicited bid for OpenAI's IP, newly unsealed court documents show",
+            "description": "Elon Musk asked Mark Zuckerberg if he would consider joining him in bidding for OpenAI's IP, according to newly released court documents.",
+            "url": "https://www.businessinsider.com/elon-musk-pitched-mark-zuckerberg-on-bid-for-openai-ip-2026-3",
+            "urlToImage": "https://i.insider.com/69c6db31f573a637a756700e?width=1200&format=jpeg",
+            "publishedAt": "2026-03-28T02:12:23Z",
+            "content": "Elon Musk's ongoing lawsuit against OpenAI and Sam Altman reveals texts with Mark Zuckerberg discussing DOGE and OpenAI.REUTERS/Laure Andrillon\r\n<ul><li>New documents were released in Elon Musk's law… [+3588 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Annie Gaus",
+            "title": "San Francisco judge who cut ‘Grandpa Vicha’ free has a soft-on-crime past — as daughter blasts sentence",
+            "description": "The woke San Francisco judge who set a beloved grandfather's killer free has cut other criminals a break -- as his heartbroken daughter blasted the justice as \"biased.\"",
+            "url": "https://nypost.com/2026/03/27/us-news/san-francisco-judge-who-cut-grandpa-vicha-free-has-a-soft-on-crime-past/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/03/monthanus-ratanapakdee-daughter-vicha-124544368.jpg?quality=75&strip=all&w=1200",
+            "publishedAt": "2026-03-28T01:54:23Z",
+            "content": "The woke San Francisco judge who set a beloved grandfather’s killer free has cut other criminals a break — as his heartbroken daughter blasted the justice as “biased.”\r\nThe 2021 killing of Vicha Rata… [+5114 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "NYT News Service",
+            "title": "Trump and Modi had a call about the Iran war. Elon Musk joined them",
+            "description": "Elon Musk joined a call between President Trump and Prime Minister Modi discussing the Middle East crisis and the Strait of Hormuz. This unusual inclusion of a private citizen, confirmed by officials, suggests a thawing of relations between Musk and Trump aft…",
+            "url": "https://economictimes.indiatimes.com/news/india/trump-and-modi-had-a-call-about-the-iran-war-elon-musk-joined-them/articleshow/129857342.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-129857349,width-1200,height-630,imgsize-112788,overlay-economictimes/articleshow.jpg",
+            "publishedAt": "2026-03-28T01:39:16Z",
+            "content": "Elon Musk participated in a phone call on Tuesday with President Donald Trump and Prime Minister Narendra Modi of India, an unusual appearance by a private citizen on a call between two heads of stat… [+4616 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Digitimes"
+            },
+            "author": "DIGITIMES",
+            "title": "Can Tesla's Terafab revive US semiconductor manufacturing?",
+            "description": "Elon Musk, CEO of Tesla, announced in mid-March that he would launch the Terafab megafab project within seven days, and on March 21 confirmed that the facility will be built in Austin, Texas. While many remain skeptical, industry forum SemiWiki offers an alte…",
+            "url": "https://www.digitimes.com/news/a20260326PD214/tesla-ceo-elon-musk-manufacturing-launch.html",
+            "urlToImage": "https://img.digitimes.com/newsshow/20260326pd214_files/1_b.jpg",
+            "publishedAt": "2026-03-27T23:10:26Z",
+            "content": "Elon Musk, CEO of Tesla, announced in mid-March that he would launch the Terafab megafab project within seven days, and on March 21 confirmed that the facility will be built in Austin, Texas. While m… [+47 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "The Daily Caller"
+            },
+            "author": "Mary Rooke",
+            "title": "Daily Caller Editor-In-Chief Amber Duke Moderates Main Stage CPAC Panel On Online Censorship",
+            "description": "Mike Benz, and Dr. Robert Malone joined Daily Caller Editor-in-Chief Amber Duke on Friday to discuss online censorship in the West.",
+            "url": "https://dailycaller.com/2026/03/27/daily-caller-cpac-amber-duke-mike-benz-robert-malone-house-judiciary-committee-eu-digital-services-act-censorship/",
+            "urlToImage": "https://images.dailycaller.com/image/width=1280,height=549,fit=cover,format=webp,f=auto/https://cdn01.dailycaller.com/wp-content/uploads/2026/03/Screenshot-2026-03-27-at-5.28.18%e2%80%afPM-1-e1774647895377.png",
+            "publishedAt": "2026-03-27T23:03:53Z",
+            "content": "Executive Director for Foundation for Freedom Online, Mike Benz, and U.S. virologist and self-proclaimed inventor of mRNA technology, Dr. Robert Malone, joined Daily Caller Editor-in-Chief Amber Duke… [+5624 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Erickimphotography.com"
+            },
+            "author": "ERIC KIM",
+            "title": "What does life *want*?",
+            "description": "OK, kind of a big mega essay for myself: The supreme question… What is it that life wants? what doesn’t life want? So the first question is… What doesn’t life want? Life does not desire to be static, same same, boring and predictable. Life seeks to be dynamic…",
+            "url": "https://erickimphotography.com/blog/2026/03/27/what-does-life-want-2/",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T22:14:52Z",
+            "content": "OK, kind of a big mega essay for myself:\r\nThe supreme question What is it that life wants?\r\nSo the first question is What doesnt life want?\r\nLife does not desire to be static, same same, boring and p… [+7079 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Erickimphotography.com"
+            },
+            "author": "ERIC KIM",
+            "title": "What does life want?",
+            "description": "OK, kind of a big mega essay for myself: The supreme question… What is it that life wants? what doesn’t life want? So the first question is… What doesn’t life want? Life does not desire to be static, same same, boring and predictable. Life seeks to be dynamic…",
+            "url": "https://erickimphotography.com/blog/2026/03/27/what-does-life-want/",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T21:57:14Z",
+            "content": "OK, kind of a big mega essay for myself:\r\nThe supreme question What is it that life wants?\r\nSo the first question is What doesnt life want?\r\nLife does not desire to be static, same same, boring and p… [+6119 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Mbtimes.com.au"
+            },
+            "author": "Manjimup Bridgetown Times",
+            "title": "BYD experiences first profit drop since 2021",
+            "description": "BYD, the world's largest electric vehicle maker, has been expanding into global markets but says its profit has fallen for the first time since 2021.",
+            "url": "https://www.mbtimes.com.au/business/byd-experiences-first-profit-drop-since-2021-c-22060784",
+            "urlToImage": "https://images.thewest.com.au/publication/C-22060784/35b174c8cd06eac72417f088b282850f115a4c8e-16x9-x0y0w1280h720.jpg?imwidth=1200",
+            "publishedAt": "2026-03-27T21:50:01Z",
+            "content": "Chinese car maker BYD says its annual sales have risen to a record high, outpacing Tesla's, but its profit fell for the first time since 2021 under pressure from cutthroat competition.\r\nBYD, the larg… [+2902 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "BMWBLOG"
+            },
+            "author": "Horatiu Boeriu",
+            "title": "The Electric Rolls-Royce Nobody Asked For — And Why It Mattered",
+            "description": "There is something quietly audacious about what Rolls-Royce did in 2011. The company took a Phantom — its largest, heaviest, most traditionally minded car — ripped out the 6.75-liter V12, filled the engine bay with...\nFirst published by https://www.bmwblog.com",
+            "url": "https://www.bmwblog.com/2026/03/27/rolls-royce-102ex-electric-concept-led-to-spectre/",
+            "urlToImage": "https://cdn.bmwblog.com/wp-content/uploads/rolls-royce-102ex-061.jpg",
+            "publishedAt": "2026-03-27T21:46:12Z",
+            "content": "Article Summary\r\n<ul><li>The 102EX was a 2011 Phantom converted to full electric power 389 hp, 71 kWh battery, 125-mile range then taken on a world tour so Rolls-Royce customers could drive it and gi… [+6793 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "The New Republic"
+            },
+            "author": "Marin Scotten",
+            "title": "WTF Was Elon Musk Doing on a Phone Call With Trump About Iran?",
+            "description": "President Donald Trump and Indian Prime Minister Mahendra Modi had a phone call on Tuesday to discuss the war in Iran. For no apparent reason, they were joined by billionaire Elon Musk. Musk—who is a private citizen with no present involvement in government—s…",
+            "url": "https://newrepublic.com/post/208316/elon-musk-phone-call-trump-modi-iran-war",
+            "urlToImage": "https://images.newrepublic.com/41c51bb1e5ccf43ffb9f86e2d7e1b36b7d50152e.jpeg?w=1200&h=630&crop=faces&fit=crop&fm=jpg",
+            "publishedAt": "2026-03-27T21:09:51Z",
+            "content": "A memo from one private investigator, William Riley, to Epsteins criminal attorney Roy Black detailed the list of items of potential evidentiary value that had been removed just 11 days before law en… [+882 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Electrek"
+            },
+            "author": "Peter Johnson",
+            "title": "These 5 EVs are $10,000 off right now",
+            "description": "With gas prices surging, driving an EV sounds even more attractive right about now. This month, several automakers are offering discounts of $10,000 or more on popular EVs, including the Hyundai IONIQ 5 and Chevy Equinox EV.\n\n\n\n more…",
+            "url": "http://electrek.co/2026/03/27/5-evs-10000-off-right-now/",
+            "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/03/EV-10000-discount.jpeg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2026-03-27T20:38:24Z",
+            "content": "With gas prices surging, driving an EV sounds even more attractive right about now. This month, several automakers are offering discounts of $10,000 or more on popular EVs, including the Hyundai IONI… [+5884 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Ari Levy",
+            "title": "Tech stocks suffer worst week in nearly a year, driven down by war worries, Meta legal woes",
+            "description": "Meta's twin legal defeats this week and a big selloff in Micron spurred a drop in technology stocks, which were broadly hit by rising oil prices.",
+            "url": "https://www.cnbc.com/2026/03/27/tech-stocks-iran-war-meta-verdict.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/108283650-1774551893411-gettyimages-2268492365-ah707365_xfw2decf.jpeg?v=1774551940&w=1920&h=1080",
+            "publishedAt": "2026-03-27T20:24:53Z",
+            "content": "A bad week for stocks was particularly rough for tech investors, as the Nasdaq suffered its worst weekly drop since April 2025. Meta and Micron saw double-digit drops, but the pain was felt across th… [+2785 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "techradar",
+                "name": "TechRadar"
+            },
+            "author": "Leon Poultney",
+            "title": "A CyberSUV could be on the way — as Elon Musk claims that Tesla is working on 'something way cooler than a minivan'",
+            "description": "A CyberSUV could be on the way, as Elon Musk hints that it is working on “something way cooler than a minivan”",
+            "url": "https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/a-cybersuv-could-be-on-the-way-as-elon-musk-claims-that-tesla-is-working-on-something-way-cooler-than-a-minivan",
+            "urlToImage": "https://cdn.mos.cms.futurecdn.net/fT5CCcDt6YzukQCmfu3JGE-1920-80.jpg",
+            "publishedAt": "2026-03-27T20:00:00Z",
+            "content": "<ul><li>Elon Musk replied to X users pressing for a Tesla minivan</li><li>Successor to the Model X could be on the cards</li><li>But Tesla has been teasing an electric van or bus for decades</li></ul… [+2810 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Techdirt"
+            },
+            "author": "Mike Masnick",
+            "title": "Turns Out That Advertisers Not Wanting To Fund Neo-Nazi-Adjacent Content Isn’t An Antitrust Violation",
+            "description": "Remember when Elon Musk told advertisers to “go fuck” themselves and then sued them for the crime of taking his advice? A federal judge has now dismissed that lawsuit — with prejudice — confirming what anyone with a passing familiarity with antitrust law alre…",
+            "url": "https://www.techdirt.com/2026/03/27/turns-out-that-advertisers-not-wanting-to-fund-neo-nazi-adjacent-content-isnt-an-antitrust-violation/",
+            "urlToImage": "https://www.techdirt.com/wp-content/themes/techdirt/assets/images/td-rect-logo-white.png",
+            "publishedAt": "2026-03-27T19:56:00Z",
+            "content": "from the it-was-always-a-shakedown dept\r\nRemember when Elon Musk told advertisers to “go fuck” themselves and then sued them for the crime of taking his advice? A federal judge has now dismissed that… [+10665 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "cbc-news",
+                "name": "CBC News"
+            },
+            "author": null,
+            "title": "Liberal MP's Chinese forced labour comments come as U.S. probes Canada's imports",
+            "description": "Liberal MP Michael Ma's apology for confronting an academic witness about whether her evidence on Chinese aluminum supply chains could be \"hearsay\" coincides with a highly sensitive moment in Canada's trade war with the Trump administration. The U.S. included…",
+            "url": "https://www.cbc.ca/news/politics/michael-ma-china-forced-labour-investigation-9.7144931",
+            "urlToImage": "https://i.cbc.ca/ais/bf73b1af-c007-4ab3-9d27-ea693a6cbbc8,1774637467334/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C546%2C6150%2C3459%29%3BResize%3D620",
+            "publishedAt": "2026-03-27T19:28:27Z",
+            "content": "Liberal MP Michael Ma's apology for confronting an academic witness about whether her evidence on forced labour in Chinese aluminum supply chains could be \"hearsay\" coincides with a highly sensitive … [+8786 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "BMWBLOG"
+            },
+            "author": "Horatiu Boeriu",
+            "title": "2026 BMW i5 NACS Update: Native Port, Supercharger Access, and Adapters Explained",
+            "description": "BMW’s push into Tesla’s charging network is picking up speed. Following the announcement that the 2026 i5 M60 would arrive with a native NACS port, BMW has now confirmed a fuller picture of how the...\nFirst published by https://www.bmwblog.com",
+            "url": "https://www.bmwblog.com/2026/03/27/2026-bmw-i5-nacs-charging-port-supercharger-update/",
+            "urlToImage": "https://cdn.bmwblog.com/wp-content/uploads/2024/06/2025-bmw-i5-edrive40-review-1.jpg",
+            "publishedAt": "2026-03-27T19:24:23Z",
+            "content": "Article Summary\r\n<ul><li>All i5s built from March 2026 onward come standard with a native NACS port, plus bundled J1772-to-NACS and CCS1-to-NACS adapters so owners can use both charging networks.</li… [+2824 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Electrek"
+            },
+            "author": "Fred Lambert",
+            "title": "Podcast: Tesla minivan but cooler?, used EV sales rise, sodium batteries are coming",
+            "description": "In the Electrek Podcast, we discuss the most popular news in the world of sustainable transport and energy. In this week’s episode, we discuss Tesla coming with minivan but cooler?, used EV sales rising, sodium batteries are coming, and more.\n\n\n\n more…",
+            "url": "http://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/",
+            "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2017/12/business_card-1.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2026-03-27T19:17:36Z",
+            "content": "In the Electrek Podcast, we discuss the most popular news in the world of sustainable transport and energy. In this weeks episode, we discuss Tesla coming with minivan but cooler?, used EV sales risi… [+847 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Kirsten Korosec",
+            "title": "Waymo’s skyrocketing ridership in one chart | TechCrunch",
+            "description": "Waymo's weekly paid robotaxi trips have increased tenfold in less than two years.",
+            "url": "https://techcrunch.com/2026/03/27/waymo-skyrocketing-ridership-in-one-chart/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2026/03/waymo-chart2.png?resize=1200,837",
+            "publishedAt": "2026-03-27T19:14:50Z",
+            "content": "Waymo is now providing 500,000 paid robotaxi rides every week across 10 U.S. cities, the company shared in a post on X this week. The eye-popping figure is reflective of the Alphabet-owned companys a… [+3106 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Tesla Falls 3% as Delivery Fears Overshadow SpaceX IPO Buzz and Cybercab Excitement",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_283ad6f1-35d6-4566-be53-cfa47e8d059a",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T18:30:55Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Why Tesla Investors Should Care About SpaceX's IPO",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_a6cbd35e-9ce9-4565-9e8e-5593a64aea78",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T18:06:21Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Notebookcheck.net"
+            },
+            "author": "Daniel Zlatev",
+            "title": "Full-size Tesla SUV teased to fill its 3-row family model gap",
+            "description": "Tesla doesn't have a full-size family SUV at the moment, but it may be thinking of adding one to its portfolio due to popular demand. The Model Y L won't cut it, it seems, especially in the US, where 3-row SUVs are much larger.",
+            "url": "https://www.notebookcheck.net/Full-size-Tesla-SUV-teased-to-fill-its-3-row-family-model-gap.1260793.0.html",
+            "urlToImage": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/Tesla-3-row-SUV-teaser.jpg",
+            "publishedAt": "2026-03-27T18:01:00Z",
+            "content": "Elon Musk is teasing a mysterious new project that Tesla is apparently already working on that aims to fill the most glaring gap in its portfolio, the lack of a full-size family SUV. \r\nWhile Tesla di… [+1617 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Electrek"
+            },
+            "author": "Reinette LeJeune",
+            "title": "Day 3 Spring Sale Green Deals – Anker eufy smart security devices 50% off, Bluetti increases power station savings, Segway, more",
+            "description": "It’s day 3 of Amazon’s Big Spring Sale, and we’re continuing our coverage of all the best ongoing deals there and elsewhere through the rest of March. Among today’s headliners, we have Anker’s massive lineup of eufy smart security devices seeing up to 50% dis…",
+            "url": "http://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/",
+            "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/03/Anker-eufy-Bluetti-Segway-Greenworks-GDs-FI.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2026-03-27T18:00:00Z",
+            "content": "It’s day 3 of Amazon’s Big Spring Sale, and we’re continuing our coverage of all the best ongoing deals there and elsewhere through the rest of March. Among today’s headliners, we have Anker’s massiv… [+15803 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Crypto Briefing"
+            },
+            "author": "Estefano Gomez",
+            "title": "Tech stocks lead Friday selloff as crypto breaks lower and gold and silver spike",
+            "description": "Tech stocks slide as broader market selloff deepens, crypto drops below key levels, and gold rises amid US Iran tensions and rising yields.\nThe post Tech stocks lead Friday selloff as crypto breaks lower and gold and silver spike appeared first on Crypto Brie…",
+            "url": "https://cryptobriefing.com/tech-stock-volatility-market-selloff/",
+            "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2026/03/27135609/ad0734ec-2be7-4057-a7f5-1b5e2b0fde60-800x420.jpg",
+            "publishedAt": "2026-03-27T17:57:44Z",
+            "content": "Microsoft leads declines across Big Tech as geopolitical tensions, rising yields, and AI spending concerns pressure risk assets. Technology stocks fell Friday as a broader market selloff intensified,… [+2726 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Tesla Slashes Cybertruck Test Drives as Demand Surges — The Real Story Behind the Sudden Shortage",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8db2b673-db5f-4ee7-98a8-44972e3674c0",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T17:45:00Z",
+            "content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and / or access information on a device (in other words, us… [+1046 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Wccftech"
+            },
+            "author": "Muhammad Zuhair",
+            "title": "TSMC’s 3nm Chip Capacity Has Become So Constrained That Only “Long-Term, Loyal” Customers Are Getting Priority",
+            "description": "TSMC's chip capacity has become a real bottleneck for companies in the AI race, and a new report indicates that the 3nm node is in high demand across major segments of the industry. Apple & NVIDIA Are Major 3nm Clients, and the Supply Shortage Actually Helps …",
+            "url": "https://wccftech.com/tsmc-3nm-chip-capacity-has-become-so-constrained-that-only-long-term-loyal-customers-are-getting-supply-for-now/",
+            "urlToImage": "https://cdn.wccftech.com/wp-content/uploads/2025/10/TSMC-2.jpg",
+            "publishedAt": "2026-03-27T17:39:28Z",
+            "content": "TSMC's chip capacity has become a real bottleneck for companies in the AI race, and a new report indicates that the 3nm node is in high demand across major segments of the industry. \r\nWe have discuss… [+2591 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Bitcoinist"
+            },
+            "author": "Christian Encila",
+            "title": "No Bitcoin Sell-Off At GameStop, 4,710 BTC Still On Books",
+            "description": "Two months of speculation ended Tuesday when GameStop confirmed it never sold its Bitcoin. The company pledged 4,709 of its coins to Coinbase Credit as collateral for a covered-call options strategy, according to its annual report filed with the Securities an…",
+            "url": "https://bitcoinist.com/no-bitcoin-sell-off-at-gamestop-4710-btc-still-on-books/",
+            "urlToImage": "https://bitcoinist.com/wp-content/uploads/2026/03/a_dfb6b7.jpg",
+            "publishedAt": "2026-03-27T16:30:45Z",
+            "content": "Two months of speculation ended Tuesday when GameStop confirmed it never sold its Bitcoin. The company pledged 4,709 of its coins to Coinbase Credit as collateral for a covered-call options strategy,… [+2255 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Ross O'Keefe",
+            "title": "Drunken bozo caught passed out in auto-driving Tesla — next to shocking evidence in passenger seat",
+            "description": "Cops found a California man passed out in the driver's seat of a Tesla a little after 11 a.m. Wednesday.",
+            "url": "https://nypost.com/2026/03/27/us-news/dui-suspect-passed-out-behind-the-wheel-in-auto-driving-tesla/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/03/124530773.jpg?quality=75&strip=all&w=1200",
+            "publishedAt": "2026-03-27T16:20:47Z",
+            "content": "A drunk and stoned driver was found passed out in his Tesla after the the electric vehicle was seen driving through city streets on autopilot mode.\r\nThe Vacaville Police Department found the motorist… [+1802 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-next-web",
+                "name": "The Next Web"
+            },
+            "author": "Alina Maria Stan",
+            "title": "Meta grants executives up to $921 million in stock options on the same day it lays off 700 workers",
+            "description": "Meta disclosed in SEC filings on Tuesday that it had granted stock options to six of its most senior executives, the first such awards since the company’s 2012 IPO. Hours later, it laid off approximately 700 employees across Reality Labs, recruiting, sales, a…",
+            "url": "https://thenextweb.com/news/meta-9-trillion-valuation-executive-stock-options-layoffs/",
+            "urlToImage": "https://img-cdn.tnwcdn.com/image/tnw-blurple?filter_last=1&fit=1280%2C640&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2026%2F03%2Fmeta-9-trillion-valuation.png&signature=9183902a2c1bde8cbc2b045800fac02c",
+            "publishedAt": "2026-03-27T16:01:25Z",
+            "content": "Meta disclosed in SEC filings on Tuesday that it had granted stock options to six of its most senior executives, the first such awards since the companys 2012 IPO. Hours later, it laid off approximat… [+5892 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Abcnews.com"
+            },
+            "author": "CHAN HO-HIM AP business writer",
+            "title": "China's BYD sees 1st profit drop since 2021, but Tesla-rival takes global EV crown",
+            "description": "Chinese automaker BYD reports its annual revenue rose to a record $116 billion last year, outpacing Tesla's, but profit fell for the first time since 2021 under pressure from cutthroat competition",
+            "url": "https://abcnews.com/Business/wireStory/chinas-byd-sees-profit-drop-2021-tesla-rival-131472703",
+            "urlToImage": "https://i.abcnewsfe.com/a/bff4864b-6edd-4d3d-86e6-29f5eb60d787/wirestory_c2fe8ed6647f245161b7648cd7407a51_16x9.jpg?w=1600",
+            "publishedAt": "2026-03-27T15:56:18Z",
+            "content": "HONG KONG -- Chinese automaker BYD said Friday its annual sales rose to a record $116 billion, outpacing Teslas, but its profit fell for the first time since 2021 under pressure from cutthroat compet… [+3217 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Piyush Shukla",
+            "title": "Why is MSFT, Google, Meta, Nvidia and Tesla stocks falling big today? Here’s what’s driving the Big Tech stock crash",
+            "description": "Big Tech stocks are under sharp pressure today. The Big Tech stock crash today is hitting Microsoft Corp, Alphabet Inc, Meta Platforms Inc, NVIDIA Corporation, and Tesla Inc together. The Nasdaq is now down over 10% from its recent peak. Investors are reactin…",
+            "url": "https://economictimes.indiatimes.com/news/international/us/why-is-msft-google-meta-nvidia-and-tesla-stock-falling-big-today-heres-whats-driving-the-big-tech-stock-crash/articleshow/129850799.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-129850828,width-1200,height-630,imgsize-205502,overlay-economictimes/articleshow.jpg",
+            "publishedAt": "2026-03-27T15:55:12Z",
+            "content": "The Big Tech stock crash today is turning heads across Wall Street. Microsoft Corp has dropped nearly 34% from its 2025 peak, while Meta Platforms Inc slid over 3% in a single day. At the same time, … [+5473 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "seattlepi.com"
+            },
+            "author": "By CHAN HO-HIM, AP Business Writer",
+            "title": "China's BYD sees first profit drop since 2021, even as the Tesla-rival takes global EV crown",
+            "description": "Chinese automaker BYD reports its annual revenue rose to a record $116 billion last year, outpacing Tesla's, but profit fell for the first time since 2021 under pressure from cutthroat competition. BYD, the world's largest electric vehicle maker, has been exp…",
+            "url": "https://www.seattlepi.com/news/world/article/china-s-byd-sees-first-profit-drop-since-2021-22155571.php",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T15:52:39Z",
+            "content": "A required part of this site couldnt load. This may be due to a browser\r\n extension, network issues, or browser settings. Please check your\r\n connection, disable any ad blockers, or try using a diffe… [+12 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Austin American-Statesman"
+            },
+            "author": "Marley Malenfant",
+            "title": "Tesla video shows moment Texas spring breaker thrown from Jeep in deadly crash",
+            "description": "Tesla footage shows the moment a Texas spring breaker was thrown from a Jeep in a deadly Port Aransas crash.",
+            "url": "https://www.statesman.com/news/article/tesla-video-texas-spring-break-crash-22155317.php",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/X_UWcc_N8DjpV_BWtjsX4w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04Mzg7Y2Y9d2VicA--/https://media.zenfs.com/en/austin_american_statesman_hearst_articles_361/b54950bdc00a6000240201a12aa85130",
+            "publishedAt": "2026-03-27T15:52:22Z",
+            "content": "A viral video showing a man twerking atop a moving Jeep during spring break in Port Aransas captured the moments before a crash that left him dead.\r\nAnother video, shared on X, appears to show Tesla … [+842 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Piyush Shukla",
+            "title": "US stock market crash Dow S&P 500 Nasdaq big fall today: What’s driving Dow Jones, S&P 500 and Nasdaq crash today?",
+            "description": "US stock market crash Dow S&P 500 Nasdaq big fall today deepened as the Nasdaq dropped over 1.4% and the Dow Jones Industrial Average lost more than 400 points in early trade. Markets are reacting fast. Oil prices surged above $110 after tensions near the Str…",
+            "url": "https://economictimes.indiatimes.com/news/international/us/us-stock-market-crash-dow-sp-500-nasdaq-big-fall-today-whats-driving-dow-jones-sp-500-and-nasdaq-crash-today/articleshow/129850617.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-129850694,width-1200,height-630,imgsize-58144,overlay-economictimes/articleshow.jpg",
+            "publishedAt": "2026-03-27T15:35:44Z",
+            "content": "US stock crash Dow SP Nasdaq fall today. The Nasdaq is now down more than 10% from its recent peak, officially entering correction territory. On March 27, 2026, the Dow Jones fell over 400 points, th… [+8676 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "financial-post",
+                "name": "Financial Post"
+            },
+            "author": "Bloomberg News",
+            "title": "Nasdaq 100 drops into correction territory for first time since Liberation Day",
+            "description": "The Nasdaq 100 Index fell into a correction territory on Friday amid a deepening slump in the shares of technology giants. Read more",
+            "url": "https://financialpost.com/investing/nasdaq-100-falls-correction-territory",
+            "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/03/nasdaq-0327-ph.jpg",
+            "publishedAt": "2026-03-27T14:26:16Z",
+            "content": "The Nasdaq 100 Index fell into a correction territory on Friday amid a deepening slump in the shares of technology giants that have powered the bull market for most of the past three years.\r\nTHIS CON… [+4471 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Reuters",
+            "title": "US Stocks: SpaceX's listing stirs up social media frenzy, ticker bets",
+            "description": "From rocket launches drawing millions of YouTube views to social media frenzy over its ​potential listing, SpaceX's debut is shaping up to ​be a landmark moment for Wall Street.",
+            "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-spacexs-listing-stirs-up-social-media-frenzy-ticker-bets/articleshow/129849804.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-129849804,width-1200,height-630,imgsize-50586,overlay-etmarkets/articleshow.jpg",
+            "publishedAt": "2026-03-27T14:14:16Z",
+            "content": "From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.Traders are betting thou… [+2931 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Electrek"
+            },
+            "author": "Fred Lambert",
+            "title": "New EV sales drop 28% in Q1 2026, but used EVs surge 12% to near-record levels",
+            "description": "The US electric vehicle market has split into two diverging realities. New EV sales cratered 28% year-over-year in Q1 2026 to just 212,600 units, according to new data from Cox Automotive — but used EV sales surged 12% to 93,500 units, with prices now within …",
+            "url": "http://electrek.co/2026/03/27/used-ev-sales-boom-new-ev-sales-drop-28-percent-q1-2026/",
+            "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/01/GM-Electrify-America-EV-Charging.jpeg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2026-03-27T14:06:08Z",
+            "content": "The US electric vehicle market has split into two diverging realities. New EV sales cratered 28% year-over-year in Q1 2026 to just 212,600 units, according to new data from Cox Automotive but used EV… [+6011 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Plos.org"
+            },
+            "author": "Carly A. Lockard, Bruce M. Damon, Hacene Serrai",
+            "title": "Correction: Ultrashort-T2* mapping at 7 tesla using an optimized pointwise encoding time reduction with radial acquisition (PETRA) sequence at standard and extended echo times",
+            "description": null,
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346005",
+            "urlToImage": "https://journals.plos.org/plosone/article/figure/image?id=10.1371/journal.pone.0346005.g003&size=inline",
+            "publishedAt": "2026-03-27T14:00:00Z",
+            "content": "In the Ultrashort-T2* mapping subsection of Materials and methods. There is an error in the second sentence of the first paragraph. The correct sentence is: The MnCl2 phantom contained ten 5 mL centr… [+2388 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "financial-post",
+                "name": "Financial Post"
+            },
+            "author": "Bloomberg News",
+            "title": "BYD Posts Worse-Than-Expected Profit Drop Amid EV Price War",
+            "description": "BYD Co. reported a steeper-than-expected slump in fourth-quarter profit as relentless competition and tighter regulation in China ramped up pressure on the world’s biggest electric vehicle maker to reignite stalling momentum.",
+            "url": "https://financialpost.com/pmn/business-pmn/byd-posts-worse-than-expected-profit-drop-amid-ev-price-war",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T13:35:55Z",
+            "content": "(Bloomberg) BYD Co. reported a steeper-than-expected slump in fourth-quarter profit as relentless competition and tighter regulation in China ramped up pressure on the worlds biggest electric vehicle… [+4864 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Futurism"
+            },
+            "author": "Joe Wilkins",
+            "title": "Protesters Have Figured Out They Can Block Waymos and Berate Their Passengers While the Cars Are Paralyzed",
+            "description": "\"We felt helpless.\"\nThe post Protesters Have Figured Out They Can Block Waymos and Berate Their Passengers While the Cars Are Paralyzed appeared first on Futurism.",
+            "url": "http://futurism.com/advanced-transport/waymo-protestor-trapped",
+            "urlToImage": "https://futurism.com/wp-content/uploads/2026/03/waymo-protestor-trapped.jpg?w=1200",
+            "publishedAt": "2026-03-27T13:04:51Z",
+            "content": "Can’t-miss innovations from the bleeding edge of science and tech\r\nTech boosters might love them, but Waymo’s self-driving cars aren’t exactly currying favor with John Q Public. In the past few month… [+2005 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Alistair Charlton",
+            "title": "Porsche Cayenne Electric Review: A Phenomenally Capable SUV",
+            "description": "Porsche’s latest electric SUV is its most capable yet, and its most powerful street car ever. But should you wait for the hybrid instead?",
+            "url": "https://www.wired.com/review/porsche-cayenne-electric-2026/",
+            "urlToImage": "https://media.wired.com/photos/69c421b7241084c70f419f12/191:100/w_1280,c_limit/327501_1920x1281.jpg",
+            "publishedAt": "2026-03-27T13:00:00Z",
+            "content": "By every metric, the Cayenne delivers improvement over the smaller Macanand so it should, given the price difference and Porsches vehicle hierarchybut on paper, its range and charge speed are already… [+3771 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Ibtimes.com.au"
+            },
+            "author": "Tony Jackson",
+            "title": "Top EVs to Buy in 2026: Shield Yourself from Soaring Gas Prices",
+            "description": "With U.S. gasoline prices climbing above $3.98 per gallon in late March 2026 — up more than $1 since late February amid geopolitical tensions in the Middle East",
+            "url": "https://www.ibtimes.com.au/top-evs-buy-2026-shield-yourself-soaring-gas-prices-1864683",
+            "urlToImage": "https://d.ibtimes.com.au/en/full/1893066/chevrolet-equinox-ev.jpg",
+            "publishedAt": "2026-03-27T12:47:22Z",
+            "content": "With U.S. gasoline prices climbing above $3.98 per gallon in late March 2026 — up more than $1 since late February amid geopolitical tensions in the Middle East — many drivers are accelerating their … [+7643 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "The Conversation Africa"
+            },
+            "author": "Scott Solomon, Teaching Professor of BioSciences, Rice University",
+            "title": "From ‘Project Hail Mary’ to Artemis II, spaceflight captures audiences when it centers on people because human space travel is hazardous",
+            "description": "Space is extremely dangerous, but people can still do more than robotic explorers can – in terms of technical achievements and inspiring public interest.",
+            "url": "https://theconversation.com/from-project-hail-mary-to-artemis-ii-spaceflight-captures-audiences-when-it-centers-on-people-because-human-space-travel-is-hazardous-279147",
+            "urlToImage": "https://images.theconversation.com/files/726225/original/file-20260325-85-myf4a2.jpeg?ixlib=rb-4.1.0&rect=0%2C177%2C1920%2C960&q=45&auto=format&w=1356&h=668&fit=crop",
+            "publishedAt": "2026-03-27T12:28:20Z",
+            "content": "The Artemis II crew poses during a ground systems test ahead of launch. NASA/Frank Michaux\r\nThe central premise of the blockbuster film “Project Hail Mary” is a long-shot mission with a familiar goal… [+7542 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Freerepublic.com"
+            },
+            "author": "X",
+            "title": "In 2002, a part-time single mother at a small rocketry consultancy was driving on an LA freeway when she decided she was being an idiot for not taking a job at a startup with zero successful launches and seven employees.",
+            "description": "In 2002, a part-time single mother at a small rocketry consultancy was driving on an LA freeway when she decided she was being an idiot for not taking a job at a startup with zero successful launches and seven employees. Gwynne Shotwell joined SpaceX as emplo…",
+            "url": "https://freerepublic.com/focus/f-chat/4372416/posts",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T12:15:17Z",
+            "content": "Skip to comments.\r\nIn 2002, a part-time single mother at a small rocketry consultancy was driving on an LA freeway when she decided she was being an idiot for not taking a job at a startup with zero … [+5103 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "TMC the metals company Inc.",
+            "title": "TMC Announces Fourth Quarter and Full Year 2025 Results",
+            "description": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- TMC the metals company Inc. (Nasdaq: TMC) (“TMC” or “the Company”), a leading developer of the world’s largest resource of critical metals essential to energy, defense, manufacturing and infrastructure, today provi…",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263738/0/en/TMC-Announces-Fourth-Quarter-and-Full-Year-2025-Results.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/25fe098b-8e92-4c74-bb61-20b928ec09ee",
+            "publishedAt": "2026-03-27T12:06:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- TMC the metals company Inc. (Nasdaq: TMC) (TMC or the Company), a leading developer of the worlds largest resource of critical metals essential to energy,… [+37658 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Researchbuzz.me"
+            },
+            "author": "ResearchBuzz",
+            "title": "Paraguay Linguistics, 10,000 Fingerprints, Public Domain Game Jam, More: Friday ResearchBuzz, March 27, 2026",
+            "description": "NEW RESOURCES Asunción Times: Paraguay Launches Digital Platform To Preserve Linguistic Heritage. “Paraguay is taking a significant step towards preserving its linguistic heritage diversity with the introduction of DamPy, the Multilingual Audiovisual […]",
+            "url": "https://researchbuzz.me/2026/03/27/paraguay-linguistics-10000-fingerprints-public-domain-game-jam-more-friday-researchbuzz-march-27-2026/",
+            "urlToImage": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvczAud3AuY29tXC9pXC9ibGFuay5qcGciLCJ0eHQiOiJSZXNlYXJjaEJ1enoiLCJ0ZW1wbGF0ZSI6ImhpZ2h3YXkiLCJmb250IjoiIiwiYmxvZ19pZCI6NDMyODc1Nn0.BjdcPIDlw4ZG0Ki13B-quwxnrzAxn9iB5rJXagRMNlcMQ",
+            "publishedAt": "2026-03-27T12:01:54Z",
+            "content": "NEW RESOURCES \r\nAsunción Times: Paraguay Launches Digital Platform To Preserve Linguistic Heritage. “Paraguay is taking a significant step towards preserving its linguistic heritage diversity with th… [+5819 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Freerepublic.com"
+            },
+            "author": "Teslarati",
+            "title": "Tesla lands on Fortune’s 2026 Most Innovative Companies and the Cybercab is why",
+            "description": "Fortune has named Tesla to its America’s Most Innovative Companies 2026 list, and the timing could not carry more weight. With Cybercab production ramping at Gigafactory Texas and a driverless Robotaxi service expanding to key cities in the US, Tesla’s inclus…",
+            "url": "https://freerepublic.com/focus/f-news/4372412/posts",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T11:57:04Z",
+            "content": "Skip to comments.\r\nTesla lands on Fortunes 2026 Most Innovative Companies and the Cybercab is whyTeslarati ^\r\n | 03/26/2026\r\n | Gene\r\nPosted on 03/27/2026 4:57:04 AM PDT by SmokingJoe\r\nFortune has na… [+2188 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Freerepublic.com"
+            },
+            "author": "Teslarati",
+            "title": "Tesla lands on Fortune’s 2026 Most Innovative Companies and the Cybercab is why",
+            "description": "Fortune has named Tesla to its America’s Most Innovative Companies 2026 list, and the timing could not carry more weight. With Cybercab production ramping at Gigafactory Texas and a driverless Robotaxi service expanding to key cities in the US, Tesla’s inclus…",
+            "url": "https://freerepublic.com/focus/f-bloggers/4372412/posts",
+            "urlToImage": null,
+            "publishedAt": "2026-03-27T11:57:04Z",
+            "content": "Skip to comments.\r\nTesla lands on Fortunes 2026 Most Innovative Companies and the Cybercab is whyTeslarati ^\r\n | 03/26/2026\r\n | Gene\r\nPosted on 03/27/2026 4:57:04 AM PDT by SmokingJoe\r\nFortune has na… [+2745 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Reuters",
+            "title": "SpaceX's listing stirs up social media hype, ticker bets",
+            "description": "Traders are betting thousands of ​dollars on the company's ticker and speculating over its entry into the most elite club of US companies, giving the world's most valuable startup a level of social media buzz that only a few companies enjoy, especially when t…",
+            "url": "https://economictimes.indiatimes.com/tech/technology/spacexs-listing-stirs-up-social-media-hype-ticker-bets/articleshow/129846660.cms",
+            "urlToImage": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-38950,resizemode-75,msid-129846660/tech/technology/spacexs-listing-stirs-up-social-media-hype-ticker-bets.jpg",
+            "publishedAt": "2026-03-27T11:47:19Z",
+            "content": "From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.Traders are betting thou… [+2713 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "Techtarget.com"
+            },
+            "author": "Rosa Heaton",
+            "title": "Weekly news roundup: Meta lawsuit, Sora shutdown and DarkSword leak",
+            "description": "Stay up to date with the latest U.S. tech news, IPOs and executive moves shaping the industry each week.",
+            "url": "https://www.techtarget.com/searchcio/feature/Weekly-news-roundup-Meta-lawsuit-Sora-shutdown-and-DarkSword-leak",
+            "urlToImage": "https://www.techtarget.com/rms/onlineimages/maze_g467037520.jpg",
+            "publishedAt": "2026-03-27T11:28:00Z",
+            "content": "This week in tech found social media giants Meta and YouTube on the losing side in landmark lawsuits in the U.S., a major leak exposing iPhone users, the demise of OpenAI's Sora and ongoing risks to … [+5253 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "CNA"
+            },
+            "author": null,
+            "title": "SpaceX's listing stirs up social media frenzy, ticker bets",
+            "description": "March 27 : From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.Traders are betting thousands of dollars on the company's ticker and spec…",
+            "url": "https://www.channelnewsasia.com/business/spacexs-listing-stirs-up-social-media-frenzy-ticker-bets-6021371",
+            "urlToImage": "https://dam.mediacorp.sg/image/upload/s--CsJu_LYg--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-03-27T112725Z_2_LYNXMPEM2Q0MU_RTROPTP_3_SPACEX-IPO-MARKETS.JPG?itok=uZWmynDJ",
+            "publishedAt": "2026-03-27T11:27:25Z",
+            "content": "March 27 : From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.\r\nTraders are… [+2975 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "CNA"
+            },
+            "author": null,
+            "title": "SpaceX's listing stirs up social media hype, ticker bets",
+            "description": "March 27 : From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.Traders are betting thousands of dollars on the company's ticker and spec…",
+            "url": "https://www.channelnewsasia.com/business/spacexs-listing-stirs-up-social-media-hype-ticker-bets-6021371",
+            "urlToImage": "https://dam.mediacorp.sg/image/upload/s--CsJu_LYg--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-03-27T112725Z_2_LYNXMPEM2Q0MU_RTROPTP_3_SPACEX-IPO-MARKETS.JPG?itok=uZWmynDJ",
+            "publishedAt": "2026-03-27T11:27:25Z",
+            "content": "March 27 : From rocket launches drawing millions of YouTube views to social media frenzy over its potential listing, SpaceX's debut is shaping up to be a landmark moment for Wall Street.\r\nTraders are… [+2762 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$PLUG Shareholders: Plug Power Hit with Securities Fraud Class Action After Stock Slides 17% – BFA Law Notifies Investors of Upcoming April 3 Deadline",
+            "description": "Plug Power Hit with Securities Fraud Class Action After Stock Slides 17% – BFA Law Notifies Investors of Upcoming April 3 Deadline...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263660/0/en/PLUG-Shareholders-Plug-Power-Hit-with-Securities-Fraud-Class-Action-After-Stock-Slides-17-BFA-Law-Notifies-Investors-of-Upcoming-April-3-Deadline.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces that a class action lawsuit has been filed against Plug Power Inc. (NASDAQ:PLUG) and … [+4758 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$SMR Shareholders: NuScale Power Hit with Securities Fraud Class Action After Stock Slides 12% – BFA Law Notifies Investors of Upcoming April 20 Deadline",
+            "description": "NuScale Power Hit with Securities Fraud Class Action After Stock Slides 12% – BFA Law Notifies Investors of Upcoming April 20 Deadline...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263659/0/en/SMR-Shareholders-NuScale-Power-Hit-with-Securities-Fraud-Class-Action-After-Stock-Slides-12-BFA-Law-Notifies-Investors-of-Upcoming-April-20-Deadline.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces that a class action lawsuit has been filed against NuScale Power Corporation (NYSE:SM… [+5233 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$EOSE Shareholders: Eos Energy Hit with Securities Fraud Class Action After Stock Slides 39% – BFA Law Notifies Investors of Upcoming May 5 Deadline",
+            "description": "Eos Energy Hit with Securities Fraud Class Action After Stock Slides 39% – BFA Law Notifies Investors of Upcoming May 5 Deadline...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263661/0/en/EOSE-Shareholders-Eos-Energy-Hit-with-Securities-Fraud-Class-Action-After-Stock-Slides-39-BFA-Law-Notifies-Investors-of-Upcoming-May-5-Deadline.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces that a class action lawsuit has been filed against Eos Energy Enterprises, Inc. (NASD… [+3866 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$TNC Shareholders: Tennant Company Hit with Securities Fraud Investigation After Stock Slides 23% Amid ERP System Issues – Investors with Losses Alerted to Contact BFA Law",
+            "description": "Tennant Company Hit with Securities Fraud Investigation After Stock Slides 23% Amid ERP System Issues – Investors with Losses Alerted to Contact BFA Law...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263658/0/en/TNC-Shareholders-Tennant-Company-Hit-with-Securities-Fraud-Investigation-After-Stock-Slides-23-Amid-ERP-System-Issues-Investors-with-Losses-Alerted-to-Contact-BFA-Law.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces an investigation into Tennant Company (NYSE:TNC) for potential violations of the fede… [+3381 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$HUBG Shareholders: Hub Group Inc. Hit with Securities Fraud Investigation After Stock Slides 24% Amid Financial Restatements – Investors with Losses Alerted to Contact BFA Law",
+            "description": "Hub Group Inc. Hit with Securities Fraud Investigation After Stock Slides 24% Amid Financial Restatements – Investors with Losses Alerted to Contact BFA La",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263657/0/en/HUBG-Shareholders-Hub-Group-Inc-Hit-with-Securities-Fraud-Investigation-After-Stock-Slides-24-Amid-Financial-Restatements-Investors-with-Losses-Alerted-to-Contact-BFA-Law.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces an investigation into Hub Group Inc. (NASDAQ:HUBG) for potential violations of the fe… [+2725 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$CWH Shareholders: Camping World Hit with Securities Fraud Class Action Stock Slides 24% – BFA Law Notifies Investors of Upcoming May 11 Deadline",
+            "description": "Camping World Hit with Securities Fraud Class Action Stock Slides 24% – BFA Law Notifies Investors of Upcoming May 11 Deadline ...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263663/0/en/CWH-Shareholders-Camping-World-Hit-with-Securities-Fraud-Class-Action-Stock-Slides-24-BFA-Law-Notifies-Investors-of-Upcoming-May-11-Deadline.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces that a class action lawsuit has been filed against Camping World Holdings, Inc. (NYSE… [+4755 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$DRVN Shareholders: Driven Brands Hit with Securities Fraud Class Action After Stock Slides 39% – BFA Law Notifies Investors of Upcoming May 8 Deadline",
+            "description": "Driven Brands Hit with Securities Fraud Class Action After Stock Slides 39% – BFA Law Notifies Investors of Upcoming May 8 Deadline...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263662/0/en/DRVN-Shareholders-Driven-Brands-Hit-with-Securities-Fraud-Class-Action-After-Stock-Slides-39-BFA-Law-Notifies-Investors-of-Upcoming-May-8-Deadline.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:33:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces that a class action lawsuit has been filed against Driven Brands Holdings Inc. (NASDA… [+3695 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "GlobeNewswire"
+            },
+            "author": "Bleichmar Fonti & Auld",
+            "title": "$ADMA Shareholders: ADMA Biologics Hit with Securities Fraud Investigation After Stock Slides 29% Amid Channel Stuffing Claims – Investors with Losses Alerted to Contact BFA Law",
+            "description": "ADMA Biologics Hit with Securities Fraud Investigation After Stock Slides 29% Amid Channel Stuffing Claims – Investors with Losses Alerted to Contact BFA...",
+            "url": "https://www.globenewswire.com/news-release/2026/03/27/3263645/0/en/ADMA-Shareholders-ADMA-Biologics-Hit-with-Securities-Fraud-Investigation-After-Stock-Slides-29-Amid-Channel-Stuffing-Claims-Investors-with-Losses-Alerted-to-Contact-BFA-Law.html",
+            "urlToImage": "https://ml.globenewswire.com/Resource/Download/44a256cf-d470-4d8a-af6b-dbb1b5bbb11e",
+            "publishedAt": "2026-03-27T10:18:00Z",
+            "content": "NEW YORK, March 27, 2026 (GLOBE NEWSWIRE) -- Leading securities law firm Bleichmar Fonti &amp; Auld LLP announces an investigation into ADMA Biologics, Inc. (NASDAQ:ADMA) for potential violations of … [+3205 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "bshimkus@insider.com (Ben Shimkus)",
+            "title": "Mercedes' American CEO says he's reorganizing the company after finding a big problem in his first year",
+            "description": "Mercedes' US CEO tells Business Insider its making big changes. It comes as EVs, tariffs, demand shifts, and competition reshape the auto industry.",
+            "url": "https://www.businessinsider.com/mercedes-american-ceo-inefficiencies-first-year-2026-3",
+            "urlToImage": "https://i.insider.com/69c596654133f63e1c778c54?width=1200&format=jpeg",
+            "publishedAt": "2026-03-27T09:47:01Z",
+            "content": "Jason Hoff stood next to a 1906 Mercedes. It was originally built in a piano factory on Long Island.\r\nIt's a reminder, he joked, that the auto industry tends to repeat itself.\r\n\"You'll never guess wh… [+4721 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": null,
+                "name": "newsBTC"
+            },
+            "author": "Scott Matherson",
+            "title": "Pundit Reveals What Would Need To Happen For Dogecoin Price To Hit $10",
+            "description": "Over the years, there have been various predictions that have put the Dogecoin price as high as $10. Mostly, the last bull cycle was expected to propel the meme coin through this target. However, Dogecoin was unable to clear its previous $0.74 all-time high, …",
+            "url": "http://www.newsbtc.com/news/dogecoin/happen-dogecoin-price-hit-10/",
+            "urlToImage": "https://www.newsbtc.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-31-2025-10_05_46-AM.png?fit=1536%2C1024",
+            "publishedAt": "2026-03-27T09:30:49Z",
+            "content": "Over the years, there have been various predictions that have put the Dogecoin price as high as $10. Mostly, the last bull cycle was expected to propel the meme coin through this target. However, Dog… [+2566 chars]"
+        },
+        -
+        {
+            -
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": null,
+            "title": "Washington Dems passed an income tax they know is unconstitutional. That was the point",
+            "description": "Washington state's Senate bill proposes a 9.9% millionaire income tax viewed as unconstitutional under 93 years of settled precedent. Democrats don't care.",
+            "url": "https://www.foxnews.com/opinion/washington-dems-passed-income-tax-know-unconstitutional-point",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2025/12/bob-ferguson-governor-of-washington.png",
+            "publishedAt": "2026-03-27T09:00:49Z",
+            "content": "Travis Kalanick chose to ditch California on Dec. 18 for a reason. The Uber co-founder relocated from San Francisco to Austin, Texas, exactly 14 days before California's would-be billionaire wealth t… [+6226 chars]"
+        }
+    ]
+
+}
