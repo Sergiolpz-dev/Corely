@@ -275,7 +275,7 @@ function ArticleCard({ article, borderClass, onHide }: { article: Article; borde
 
       <CardContent className="p-4 flex flex-col flex-1 gap-2">
         <div className="flex items-center gap-1.5 flex-wrap">
-          <Badge variant="secondary" className="text-xs max-w-[150px] truncate shrink-0">
+          <Badge variant="secondary" className="text-xs max-w-37.5 truncate shrink-0">
             {article.source.name}
           </Badge>
           {article._category && (
