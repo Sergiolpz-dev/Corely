@@ -37,6 +37,13 @@ class User(Base):
         "GoogleCalendarToken", back_populates="user", uselist=False, cascade="all, delete-orphan"
     )
 
+    # Finanzas
+    transactions = relationship("Transaction", back_populates="user", cascade="all, delete-orphan")
+    income_sources = relationship("IncomeSource", back_populates="user", cascade="all, delete-orphan")
+    savings_goals = relationship("SavingsGoal", back_populates="user", cascade="all, delete-orphan")
+    expense_budgets = relationship("ExpenseBudget", back_populates="user", cascade="all, delete-orphan")
+    recurring_transactions = relationship("RecurringTransaction", back_populates="user", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<User(id={self.id}, email={self.email}, username={self.username})>"
 
