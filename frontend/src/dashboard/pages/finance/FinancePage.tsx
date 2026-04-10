@@ -595,8 +595,8 @@ export const FinancePage = () => {
                         </button>
                     </div>
                     <Button className="bg-blue-600 hover:bg-blue-700" onClick={openCreateTx}>
-                        <Plus className="h-4 w-4 mr-2" />
-                        Nueva Transacción
+                        <Plus className="h-4 w-4 sm:mr-2" />
+                        <span className="hidden sm:inline">Nueva Transacción</span>
                     </Button>
                 </div>
             </div>
@@ -669,7 +669,7 @@ export const FinancePage = () => {
 
             {/* ── Tabs ── */}
             <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
                     <TabsTrigger value="resumen">Resumen</TabsTrigger>
                     <TabsTrigger value="gastos">Gastos</TabsTrigger>
                     <TabsTrigger value="ingresos">Ingresos</TabsTrigger>

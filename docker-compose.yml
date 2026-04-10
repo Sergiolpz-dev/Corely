@@ -23,6 +23,8 @@ services:
     environment:
       # Conexión a la DB usando el nombre del servicio 'db'
       - DATABASE_URL=mysql+pymysql://root:root_password@db:3306/mi_tfg_db
+      - FRONTEND_URL=http://localhost:5173
+      - BACKEND_URL=http://localhost:8000
     depends_on:
       - db
 

@@ -254,7 +254,7 @@ export const HabitsPage = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Hábitos</h2>
           <p className="text-muted-foreground">Construye rutinas que transformen tu vida</p>
@@ -321,12 +321,12 @@ export const HabitsPage = () => {
       {/* Lista */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <CardTitle>Tus Hábitos Diarios</CardTitle>
               <CardDescription>Marca los hábitos que completes hoy</CardDescription>
             </div>
-            <div className="flex gap-1">
+            <div className="flex gap-1 flex-wrap">
               {(["all", "pending", "completed"] as FilterType[]).map((f) => (
                 <Button
                   key={f}
@@ -367,11 +367,11 @@ export const HabitsPage = () => {
                     key={habit.id}
                     className={`p-4 rounded-lg border border-l-4 ${goalReached ? "border-l-yellow-500" : getColorBorder(habit.color)} bg-card hover:bg-muted/50 transition-colors`}
                   >
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 flex-wrap">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
                           <h3 className="font-semibold">{habit.name}</h3>
-                          {completed && <CheckCircle2 className="h-5 w-5 text-green-500" />}
+                          {completed && <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />}
                           {goalReached && (
                             <span className="text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 px-2 py-0.5 rounded-full font-medium">
                               🏆 ¡Meta alcanzada!
@@ -394,18 +394,18 @@ export const HabitsPage = () => {
                             </span>
                           )}
                         </div>
-                        <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
+                        <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
-                            <Flame className="h-4 w-4 text-orange-500" />
+                            <Flame className="h-4 w-4 text-orange-500 shrink-0" />
                             {habit.streak} días de racha
                           </span>
                           <span className="flex items-center gap-1">
-                            <Target className="h-4 w-4 text-purple-500" />
+                            <Target className="h-4 w-4 text-purple-500 shrink-0" />
                             Meta: {habit.goal} días
                           </span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 shrink-0">
                         <Button
                           size="sm"
                           disabled={toggling}
