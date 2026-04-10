@@ -18,20 +18,6 @@ router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 @router.post("/register", response_model=dict, status_code=status.HTTP_201_CREATED)
 async def register(user_data: UserCreate, db: Session = Depends(get_db)):
-    """
-    Endpoint para registrar un nuevo usuario
-
-    Args:
-        user_data: Datos del nuevo usuario (email, username, password)
-        db: Sesión de base de datos
-
-    Returns:
-        Mensaje de éxito y datos básicos del usuario creado
-
-    Raises:
-        HTTPException 400: Si el email ya está registrado
-    """
-    # Verificar si el email ya existe
     existing_user = db.query(User).filter(User.email == user_data.email).first()
     if existing_user:
         raise HTTPException(
@@ -39,7 +25,6 @@ async def register(user_data: UserCreate, db: Session = Depends(get_db)):
             detail="El email ya está registrado",
         )
 
-    # Verificar si el username ya existe
     existing_username = db.query(User).filter(User.username == user_data.username).first()
     if existing_username:
         raise HTTPException(
@@ -47,7 +32,6 @@ async def register(user_data: UserCreate, db: Session = Depends(get_db)):
             detail="El nombre de usuario ya está en uso",
         )
 
-    # Crear nuevo usuario con contraseña hasheada
     new_user = User(
         email=user_data.email,
         username=user_data.username,

@@ -32,7 +32,6 @@ from finance.router import router as finance_router
 # 1. URL de conexión para MariaDB/MySQL
 DATABASE_URL = settings.DATABASE_URL
 
-# El resto es prácticamente IGUAL que antes
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -116,11 +115,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
-
-
-
 
 @app.get("/")
 def home():
