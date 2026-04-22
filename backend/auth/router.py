@@ -8,6 +8,9 @@ from auth.schemas import (
     TokenResponse,
     SocialAccountResponse,
     SetPasswordRequest,
+    UpdateProfileRequest,
+    ChangePasswordRequest,
+    DeleteAccountRequest,
 )
 from auth.utils import hash_password, verify_password, create_access_token
 from auth.dependencies import get_current_user, get_db
@@ -164,6 +167,100 @@ async def logout():
     return {"message": "Logout exitoso. Elimina el token del cliente."}
 
 
+@router.put("/profile", response_model=UserResponse)
+async def update_profile(
+    request: UpdateProfileRequest,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    if request.username != current_user.username:
+        existing = db.query(User).filter(User.username == request.username).first()
+        if existing:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="El nombre de usuario ya está en uso",
+            )
+
+    current_user.username = request.username
+    current_user.full_name = request.full_name
+    db.commit()
+    db.refresh(current_user)
+
+    social_accounts = [
+        SocialAccountResponse(
+            id=sa.id,
+            provider=sa.provider,
+            provider_email=sa.provider_email,
+            created_at=sa.created_at,
+        )
+        for sa in current_user.social_accounts
+    ]
+
+    return UserResponse(
+        id=current_user.id,
+        email=current_user.email,
+        username=current_user.username,
+        full_name=current_user.full_name,
+        avatar_url=current_user.avatar_url,
+        is_email_verified=current_user.is_email_verified,
+        has_password=current_user.has_password,
+        created_at=current_user.created_at,
+        social_accounts=social_accounts,
+    )
+
+
+@router.put("/change-password")
+async def change_password(
+    request: ChangePasswordRequest,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    if not current_user.has_password:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Tu cuenta no tiene contraseña configurada",
+        )
+
+    if not verify_password(request.current_password, current_user.hashed_password):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="La contraseña actual es incorrecta",
+        )
+
+    if len(request.new_password) < 8:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="La nueva contraseña debe tener al menos 8 caracteres",
+        )
+
+    current_user.hashed_password = hash_password(request.new_password)
+    db.commit()
+
+    return {"message": "Contraseña actualizada exitosamente"}
+
+
+@router.delete("/account", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_account(
+    request: DeleteAccountRequest,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    if current_user.has_password:
+        if not request.password:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Debes confirmar tu contraseña para eliminar la cuenta",
+            )
+        if not verify_password(request.password, current_user.hashed_password):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Contraseña incorrecta",
+            )
+
+    db.delete(current_user)
+    db.commit()
+
+
 @router.post("/set-password")
 async def set_password(
     request: SetPasswordRequest,
@@ -174,10 +271,10 @@ async def set_password(
     Establece o actualiza la contraseña del usuario.
     Util para usuarios OAuth que quieren agregar login con password.
     """
-    if len(request.password) < 6:
+    if len(request.password) < 8:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="La contraseña debe tener al menos 6 caracteres",
+            detail="La contraseña debe tener al menos 8 caracteres",
         )
 
     current_user.hashed_password = hash_password(request.password)
