@@ -271,6 +271,13 @@ export const FinancePage = () => {
         setTxModal({ open: true, editing: null });
     };
 
+    const openCreateIngreso = () => {
+        setTxDesc(""); setTxAmount(""); setTxType("ingreso"); setTxCategory("");
+        setTxDate(todayISO()); setTxNotes("");
+        setTxIsRecurring(false); setTxRecurringDay("1");
+        setTxModal({ open: true, editing: null });
+    };
+
     const openEditTx = (t: Transaction) => {
         setTxDesc(t.description); setTxAmount(String(t.amount));
         setTxType(t.type); setTxCategory(t.category || "");
@@ -711,13 +718,18 @@ export const FinancePage = () => {
                                                     </div>
                                                     <p className="text-xs text-muted-foreground">
                                                         {new Date(t.date + "T00:00:00").toLocaleDateString("es-ES")}
-                                                        {t.category && ` · ${EXPENSE_CATEGORIES.find(c => c.id === t.category)?.label ?? t.category}`}
+                                                        {t.category && ` · ${(t.type === "ingreso" ? INCOME_CATEGORIES : EXPENSE_CATEGORIES).find(c => c.id === t.category)?.label ?? t.category}`}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <span className={`font-semibold text-sm ${t.type === "ingreso" ? "text-green-600" : "text-red-600"}`}>
-                                                {t.type === "ingreso" ? "+" : "-"}{formatCurrency(t.amount)}
-                                            </span>
+                                            <div className="flex items-center gap-2">
+                                                <span className={`font-semibold text-sm ${t.type === "ingreso" ? "text-green-600" : "text-red-600"}`}>
+                                                    {t.type === "ingreso" ? "+" : "-"}{formatCurrency(t.amount)}
+                                                </span>
+                                                <button onClick={() => handleDeleteTx(t.id)} className="text-muted-foreground hover:text-red-600 transition-colors">
+                                                    <Trash2 className="h-3.5 w-3.5" />
+                                                </button>
+                                            </div>
                                         </div>
                                     ))
                                 )}
@@ -763,7 +775,7 @@ export const FinancePage = () => {
                                                         </Button>
                                                     </div>
                                                 </div>
-                                                <Progress value={pct} className="h-2" />
+                                                <Progress value={pct} className="h-2" indicatorClassName={g.color || "bg-blue-500"} />
                                             </div>
                                         );
                                     })
@@ -832,7 +844,7 @@ export const FinancePage = () => {
                                     const pct = budget ? Math.min((spent / budget) * 100, 100) : 0;
                                     const isOver90 = budget !== null && spent > 0 && spent / budget > 0.9;
                                     const isOver75 = budget !== null && spent > 0 && spent / budget > 0.75;
-                                    const barColor = isOver90 ? "[&>div]:bg-red-500" : isOver75 ? "[&>div]:bg-yellow-500" : "";
+                                    const barColor = isOver90 ? "[&>div]:bg-red-500" : isOver75 ? "[&>div]:bg-yellow-500" : "[&>div]:bg-blue-500";
                                     return (
                                         <div key={c.id} className={`p-4 rounded-lg border transition-shadow hover:shadow-md ${isOver90 ? "border-red-200 bg-red-50/30" : ""}`}>
                                             <div className="flex items-center justify-between mb-3">
@@ -995,7 +1007,7 @@ export const FinancePage = () => {
                                                 <p className="font-medium text-sm">{r.description}</p>
                                                 <p className="text-xs text-muted-foreground">
                                                     Día {r.day_of_month} de cada mes
-                                                    {r.category && ` · ${EXPENSE_CATEGORIES.find(c => c.id === r.category)?.label ?? r.category}`}
+                                                    {r.category && ` · ${INCOME_CATEGORIES.find(c => c.id === r.category)?.label ?? r.category}`}
                                                 </p>
                                             </div>
                                         </div>
@@ -1017,130 +1029,49 @@ export const FinancePage = () => {
 
                     <div className="flex items-center justify-between">
                         <div>
-                            <h3 className="font-semibold text-lg">Fuentes de Ingresos</h3>
-                            <p className="text-sm text-muted-foreground">Define tus fuentes de ingresos periódicas</p>
+                            <h3 className="font-semibold text-lg">Ingresos del Mes</h3>
+                            <p className="text-sm text-muted-foreground">Ingresos registrados en {formatMonth(selectedMonth)}</p>
                         </div>
-                        <Button className="bg-blue-600 hover:bg-blue-700" onClick={openCreateInc}>
+                        <Button className="bg-blue-600 hover:bg-blue-700" onClick={openCreateIngreso}>
                             <Plus className="h-4 w-4 mr-2" />
-                            Nueva Fuente
+                            Añadir Ingreso
                         </Button>
                     </div>
 
-                    {incomeSources.length === 0 ? (
-                        <Card>
-                            <CardContent className="py-8 text-center">
-                                <Briefcase className="h-10 w-10 mx-auto text-muted-foreground mb-3" />
-                                <p className="font-medium mb-1">Sin fuentes de ingresos</p>
-                                <p className="text-sm text-muted-foreground">Añade tu nómina, ingresos freelance u otras fuentes periódicas.</p>
-                            </CardContent>
-                        </Card>
-                    ) : (
-                        <div className="grid gap-4 md:grid-cols-2">
-                            {incomeSources.map(s => (
-                                <Card key={s.id} className={`transition-opacity ${!s.is_active ? "opacity-60" : ""}`}>
-                                    <CardContent className="p-4">
-                                        <div className="flex items-start justify-between mb-3">
-                                            <div className="flex-1 min-w-0">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <h4 className="font-semibold truncate">{s.name}</h4>
-                                                    <Badge className={`text-xs shrink-0 border-0 ${INCOME_CATEGORY_COLORS[s.category] ?? "bg-gray-100 text-gray-800"}`}>
-                                                        {INCOME_CATEGORIES.find(c => c.id === s.category)?.label ?? s.category}
-                                                    </Badge>
+                    <Card>
+                        <CardContent className="pt-4">
+                            {ingresoTransactions.length === 0 ? (
+                                <p className="text-sm text-muted-foreground text-center py-6">Sin ingresos registrados este mes.</p>
+                            ) : (
+                                <div className="space-y-2">
+                                    {ingresoTransactions.map(t => (
+                                        <div key={t.id} className="flex items-center justify-between p-3 rounded-lg border hover:bg-muted/30 transition-colors">
+                                            <div className="flex items-center gap-3">
+                                                <div className="p-2 rounded-full bg-green-100">
+                                                    <ArrowUpRight className="h-4 w-4 text-green-600" />
                                                 </div>
-                                                {s.description && <p className="text-sm text-muted-foreground">{s.description}</p>}
+                                                <div>
+                                                    <div className="flex items-center gap-1.5">
+                                                        <p className="font-medium text-sm">{t.description}</p>
+                                                        {t.recurring_id && <Repeat className="h-3 w-3 text-muted-foreground shrink-0" />}
+                                                    </div>
+                                                    <p className="text-xs text-muted-foreground">
+                                                        {new Date(t.date + "T00:00:00").toLocaleDateString("es-ES")}
+                                                        {t.category && ` · ${INCOME_CATEGORIES.find(c => c.id === t.category)?.label ?? t.category}`}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div className="flex items-center gap-1 ml-2 shrink-0">
-                                                <button
-                                                    onClick={() => handleToggleActive(s)}
-                                                    className={`text-xs px-2 py-0.5 rounded-full border font-medium transition-colors ${s.is_active ? "border-green-300 bg-green-50 text-green-700 hover:bg-green-100" : "border-gray-300 bg-gray-50 text-gray-500 hover:bg-gray-100"}`}
-                                                >
-                                                    {s.is_active ? "Activo" : "Inactivo"}
-                                                </button>
-                                                <button onClick={() => openEditInc(s)} className="text-muted-foreground hover:text-foreground p-1"><Pencil className="h-4 w-4" /></button>
-                                                <button onClick={() => handleDeleteInc(s.id)} className="text-muted-foreground hover:text-red-600 p-1"><Trash2 className="h-4 w-4" /></button>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-baseline justify-between">
-                                            <span className="text-2xl font-bold">{formatCurrency(s.amount)}</span>
-                                            <div className="text-right">
-                                                <span className="text-sm text-muted-foreground">{FREQUENCIES.find(f => f.id === s.frequency)?.label ?? s.frequency}</span>
-                                                {s.frequency !== "mensual" && (
-                                                    <p className="text-xs text-muted-foreground">≈ {formatCurrency(monthlyBySource(s))}/mes</p>
-                                                )}
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-semibold text-green-600">{formatCurrency(t.amount)}</span>
+                                                <button onClick={() => openEditTx(t)} className="text-muted-foreground hover:text-foreground"><Pencil className="h-4 w-4" /></button>
+                                                <button onClick={() => handleDeleteTx(t.id)} className="text-muted-foreground hover:text-red-600"><Trash2 className="h-4 w-4" /></button>
                                             </div>
                                         </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    )}
-
-                    {/* Projection panel */}
-                    {incomeSources.length > 0 && (
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Proyección de Ingresos</CardTitle>
-                                <CardDescription>Basada en tus fuentes activas</CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="text-center p-4 rounded-lg bg-primary/10">
-                                        <p className="text-sm text-muted-foreground">Total mensual</p>
-                                        <p className="text-2xl font-bold text-primary">{formatCurrency(totalProjectedMonthly)}</p>
-                                    </div>
-                                    <div className="text-center p-4 rounded-lg bg-muted/50">
-                                        <p className="text-sm text-muted-foreground">Total anual</p>
-                                        <p className="text-2xl font-bold">{formatCurrency(totalProjectedAnnual)}</p>
-                                    </div>
+                                    ))}
                                 </div>
-                                {totalProjectedMonthly > 0 && Object.keys(incomeByCategory).length > 0 && (
-                                    <div className="space-y-3">
-                                        <p className="text-sm font-medium">Distribución por categoría</p>
-                                        {Object.entries(incomeByCategory).map(([cat, amount]) => {
-                                            const pct = (amount / totalProjectedMonthly) * 100;
-                                            return (
-                                                <div key={cat} className="space-y-1">
-                                                    <div className="flex justify-between text-sm">
-                                                        <span>{INCOME_CATEGORIES.find(c => c.id === cat)?.label ?? cat}</span>
-                                                        <span className="text-muted-foreground">{formatCurrency(amount)} · {pct.toFixed(0)}%</span>
-                                                    </div>
-                                                    <div className="h-2 rounded-full bg-muted overflow-hidden">
-                                                        <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${pct}%` }} />
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
-                                {ingresoTransactions.length > 0 && (
-                                    <div>
-                                        <p className="text-sm font-medium mb-2">Ingresos recibidos este mes</p>
-                                        <div className="space-y-2">
-                                            {ingresoTransactions.map(t => (
-                                                <div key={t.id} className="flex items-center justify-between p-2 rounded-lg border">
-                                                    <div className="flex items-center gap-2">
-                                                        <ArrowUpRight className="h-4 w-4 text-green-600 shrink-0" />
-                                                        <div>
-                                                            <div className="flex items-center gap-1.5">
-                                                                <p className="text-sm font-medium">{t.description}</p>
-                                                                {t.recurring_id && <Repeat className="h-3 w-3 text-muted-foreground shrink-0" />}
-                                                            </div>
-                                                            <p className="text-xs text-muted-foreground">{new Date(t.date + "T00:00:00").toLocaleDateString("es-ES")}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="font-semibold text-green-600">{formatCurrency(t.amount)}</span>
-                                                        <button onClick={() => openEditTx(t)} className="text-muted-foreground hover:text-foreground"><Pencil className="h-3.5 w-3.5" /></button>
-                                                        <button onClick={() => handleDeleteTx(t.id)} className="text-muted-foreground hover:text-red-600"><Trash2 className="h-3.5 w-3.5" /></button>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </CardContent>
-                        </Card>
-                    )}
+                            )}
+                        </CardContent>
+                    </Card>
                 </TabsContent>
 
                 {/* ════════════════════════════ AHORROS ════════════════════════════ */}
@@ -1188,7 +1119,7 @@ export const FinancePage = () => {
                                                         <button onClick={() => handleDeleteGoal(g.id)} className="text-muted-foreground hover:text-red-600 p-1"><Trash2 className="h-3.5 w-3.5" /></button>
                                                     </div>
                                                 </div>
-                                                <Progress value={pct} className="h-3" />
+                                                <Progress value={pct} className="h-3" indicatorClassName={g.color || "bg-blue-500"} />
                                                 <div className="flex justify-between text-sm text-muted-foreground">
                                                     <span>Ahorrado: {formatCurrency(g.current_amount)}</span>
                                                     <span>Objetivo: {formatCurrency(g.target_amount)}</span>
@@ -1271,7 +1202,7 @@ export const FinancePage = () => {
                                 {(["gasto", "ingreso"] as const).map(t => (
                                     <button
                                         key={t}
-                                        onClick={() => setTxType(t)}
+                                        onClick={() => { setTxType(t); setTxCategory(""); }}
                                         className={`flex-1 py-2 rounded-md text-sm font-medium border transition-colors ${txType === t
                                             ? t === "gasto" ? "bg-red-500 text-white border-red-500" : "bg-green-500 text-white border-green-500"
                                             : "bg-card text-muted-foreground border-border hover:bg-muted"}`}
@@ -1301,7 +1232,7 @@ export const FinancePage = () => {
                             <Label htmlFor="tx-cat">Categoría</Label>
                             <select id="tx-cat" value={txCategory} onChange={e => setTxCategory(e.target.value)} className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
                                 <option value="">Sin categoría</option>
-                                {EXPENSE_CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+                                {(txType === "gasto" ? EXPENSE_CATEGORIES : INCOME_CATEGORIES).map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
                             </select>
                         </div>
                         <div className="space-y-1.5">
@@ -1457,7 +1388,7 @@ export const FinancePage = () => {
                             <p className="text-sm text-muted-foreground">
                                 {formatCurrency(contributionGoal.current_amount)} ahorrados de {formatCurrency(contributionGoal.target_amount)}
                             </p>
-                            <Progress value={Math.min((contributionGoal.current_amount / contributionGoal.target_amount) * 100, 100)} className="h-2 mt-2" />
+                            <Progress value={Math.min((contributionGoal.current_amount / contributionGoal.target_amount) * 100, 100)} className="h-2 mt-2" indicatorClassName={contributionGoal.color || "bg-blue-500"} />
                         </div>
                         <div className="space-y-1.5">
                             <Label htmlFor="contrib-amount">Importe a aportar (€) <span className="text-red-500">*</span></Label>
