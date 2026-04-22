@@ -60,3 +60,17 @@ class TokenData(BaseModel):
 # Schema para establecer password (usuarios OAuth)
 class SetPasswordRequest(BaseModel):
     password: str
+
+
+class UpdateProfileRequest(BaseModel):
+    username: str
+    full_name: str
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
+
+
+class DeleteAccountRequest(BaseModel):
+    password: Optional[str] = None

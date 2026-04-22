@@ -46,6 +46,9 @@ type AuthContextType = {
     ) => Promise<{ success: boolean; data?: any; error?: any }>;
     logOut: () => void;
     handleGoogleAuth: (code: string) => Promise<{ success: boolean; data?: any; error?: any }>;
+    updateProfile: (username: string, fullName: string) => Promise<{ success: boolean; data?: any; error?: any }>;
+    changePassword: (currentPassword: string, newPassword: string) => Promise<{ success: boolean; data?: any; error?: any }>;
+    deleteAccount: (password?: string) => Promise<{ success: boolean; data?: any; error?: any }>;
 };
 
 // Tipo de las props del provider
@@ -216,6 +219,72 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
         }
     };
 
+    const updateProfile = async (username: string, fullName: string) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            const response = await fetch(`${API_URL}/auth/profile`, {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, full_name: fullName }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                return { success: false, error: { message: data.detail || "Error al actualizar perfil" } };
+            }
+            setUser(data);
+            localStorage.setItem("last_username", username);
+            return { success: true, data };
+        } catch (error) {
+            return { success: false, error: { message: "Error de conexión al servidor" } };
+        }
+    };
+
+    const changePassword = async (currentPassword: string, newPassword: string) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            const response = await fetch(`${API_URL}/auth/change-password`, {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ current_password: currentPassword, new_password: newPassword }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                return { success: false, error: { message: data.detail || "Error al cambiar contraseña" } };
+            }
+            return { success: true, data };
+        } catch (error) {
+            return { success: false, error: { message: "Error de conexión al servidor" } };
+        }
+    };
+
+    const deleteAccount = async (password?: string) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            const response = await fetch(`${API_URL}/auth/account`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ password: password ?? null }),
+            });
+            if (!response.ok) {
+                const data = await response.json();
+                return { success: false, error: { message: data.detail || "Error al eliminar cuenta" } };
+            }
+            logOut();
+            return { success: true };
+        } catch (error) {
+            return { success: false, error: { message: "Error de conexión al servidor" } };
+        }
+    };
+
     // Verificar autenticación al montar el componente
     useEffect(() => {
         checkAuth();
@@ -230,6 +299,9 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
                 lognInUser,
                 logOut,
                 handleGoogleAuth,
+                updateProfile,
+                changePassword,
+                deleteAccount,
             }}
         >
             {children}

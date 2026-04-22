@@ -197,7 +197,6 @@ Error: Element type is invalid: expected a string (for built-in components) or a
 from the file it's defined in, or you might have mixed up default and named imports.
 ```
 
-![Primera ejecución del frontend con fallo en calendario](imagenes/pruebas_frontend_fallo_2026-04-02.png)
 
 **Corrección aplicada:** se actualizó el import a `import { CalendarPage } from ...` para usar el named export correcto.
 
@@ -251,10 +250,50 @@ Se añadieron los tests del módulo de noticias (`NewsPage.test.tsx`), que cubre
 
 ---
 
+### Sexta ejecución — SettingsPage
+
+| Campo         | Valor                           |
+| ------------- | ------------------------------- |
+| **Fecha**     | 22 de abril de 2026             |
+| **Resultado** | ✅ Éxito — 30 pasadas, 0 fallos |
+| **Duración**  | 4,73 segundos                   |
+
+Se añadieron los tests del módulo de ajustes (`SettingsPage.test.tsx`), que cubren dos escenarios distintos: usuario registrado con email y contraseña, y usuario autenticado únicamente mediante Google. Para aislar el componente del contexto de autenticación real se utilizó `vi.mock` sobre el hook `userAuth`, inyectando un usuario ficticio con todas las funciones necesarias (updateProfile, changePassword, deleteAccount). Todos los tests pasan satisfactoriamente.
+
+![Tests de SettingsPage pasando](imagenes/pruebas_frontend_ok_2026-04-22.png)
+
+---
+
+#### Ajustes — SettingsPage (12 pruebas)
+
+##### Usuario con email y contraseña (9 pruebas)
+
+| Prueba                                                         | Descripción                                                       | Estado    |
+| -------------------------------------------------------------- | ----------------------------------------------------------------- | --------- |
+| `renderiza sin errores`                                        | El componente se monta sin lanzar excepciones                     | ✅ PASSED |
+| `muestra el título "Configuración"`                            | El encabezado principal de la página es visible                   | ✅ PASSED |
+| `muestra el nombre completo del usuario`                       | El full_name del usuario mockeado aparece en pantalla             | ✅ PASSED |
+| `muestra el campo de contraseña actual`                        | El campo asociado al label "Contraseña actual" es accesible       | ✅ PASSED |
+| `muestra el botón "Guardar cambios"`                           | El botón de guardar perfil está presente en el DOM                | ✅ PASSED |
+| `muestra el botón "Cambiar contraseña"`                        | El botón de cambio de contraseña está presente en el DOM          | ✅ PASSED |
+| `muestra el botón "Cerrar sesión"`                             | El botón de logout está presente en el DOM                        | ✅ PASSED |
+| `muestra el botón "Eliminar cuenta"`                           | El botón de la zona de peligro está presente en el DOM            | ✅ PASSED |
+| `abre el modal de confirmación al hacer click en eliminar cuenta` | Al pulsar el botón aparece el modal con la advertencia         | ✅ PASSED |
+
+##### Usuario con Google (3 pruebas)
+
+| Prueba                                          | Descripción                                                      | Estado    |
+| ----------------------------------------------- | ---------------------------------------------------------------- | --------- |
+| `no muestra el formulario de contraseña`        | El campo "Contraseña actual" no aparece para usuarios OAuth      | ✅ PASSED |
+| `muestra el mensaje de autenticación con Google` | El aviso de acceso mediante Google es visible en la sección de seguridad | ✅ PASSED |
+| `muestra la sección de cuentas vinculadas`      | La card de cuentas vinculadas aparece cuando hay social_accounts | ✅ PASSED |
+
+---
+
 ## Resumen global
 
 | Módulo    | Pruebas | Pasadas | Fallidas |
 | --------- | ------- | ------- | -------- |
 | Backend   | 45      | 45      | 0        |
-| Frontend  | 18      | 18      | 0        |
-| **Total** | **63**  | **63**  | **0**    |
+| Frontend  | 30      | 30      | 0        |
+| **Total** | **75**  | **75**  | **0**    |
